@@ -1,0 +1,12 @@
+:root {
+  /* Primary 색상 토큰 */
+  --btn-primary-bg-enabled: #9747FF;
+  --btn-primary-bg-hover: #861DEE;
+  --btn-primary-bg-pressed: #6E0AD1;
+  --btn-primary-bg-focus: #6E0AD1;
+  --btn-primary-bg-disabled: #CCCCCC;
+
+  --btn-primary-color-enabled: #ffffff;
+  --btn-primary-color-disabled: #ffffff;
+  --Purple-900: #5603A7;
+}
