@@ -1,6 +1,6 @@
 import base from '../base/button.module.css';
-import primary from '@components/common/button/variants/primary.module.css';
-import secondary from '@components/common/button/variants/secondary.module.css';
+import primary from '@components/common/button/style/primary.module.css';
+import secondary from '@components/common/button/style/secondary.module.css';
 
 const variantStyles = {
   primary,
