@@ -1,4 +1,4 @@
-import ProfileImage from '../common/ProfileImage';
+import ProfileImage from '../common/profileImage/ProfileImage';
 import RelationBadge from '../common/badge/relationBadge/RelationBadge';
 import styles from './Card.module.css';
 
@@ -14,7 +14,7 @@ function Card({
         <div className={styles.header}>
           <ProfileImage imageUrl={profileImageUrl}/>
           <div className={styles.senderInfo}>
-            <p className={styles.sender}>From. <span>{sender}</span></p>
+            <p className={styles.sender}>From. <span className={styles.senderName}>{sender}</span></p>
             <RelationBadge relationship={relationship}/>
           </div>
         </div>
