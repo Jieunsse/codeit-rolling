@@ -1,0 +1,21 @@
+.container {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 524px;
+  height: 64px;
+  border-radius: 8px;
+  padding: 19px 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  z-index: 1000;
+}
+
+.container p {
+  color: #ffffff;
+  font-size: 16px;
+  flex-grow: 1;
+  /* To-do: font-family, font-weight 적용*/
+}
