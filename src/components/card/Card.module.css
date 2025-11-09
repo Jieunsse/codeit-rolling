@@ -26,6 +26,10 @@
   font-size: 20px;
 }
 
+.sender {
+  margin-bottom: 6px;
+}
+
 .senderName {
   font-weight: 700;
 }
@@ -35,6 +39,8 @@
   color: #4A4A4A;
   margin-top: 16px;
   margin-bottom: 16px;
+  /* 임시 line-height 값 */
+  line-height: 150%;
 }
 
 .createdAt {
