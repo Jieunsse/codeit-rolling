@@ -1,6 +1,5 @@
 import { getButtonClassName } from '@components/common/button/utils/getButtonClassName.js';
 import { getButtonIcon } from '@components/common/button/utils/getButtonIcon.js';
-import styles from '@components/common/button/style/outlined.module.css';
 
 export default function Button({
   buttonName,
@@ -14,9 +13,7 @@ export default function Button({
 
   return (
     <button className={className} disabled={state === 'disabled'} {...props}>
-      {icon && (
-        <img src={icon.src} alt="icon" className={styles[icon.className]} />
-      )}
+      {icon && <img src={icon.src} alt="icon" className={icon.className} />}
       <span>{buttonName}</span>
     </button>
   );
