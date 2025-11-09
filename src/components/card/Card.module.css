@@ -1,10 +1,12 @@
 .container {
+  position: relative;
   width: 384px;
   height: 280px;
   background-color: #ffffff;
   border-radius: 16px;
   padding: 28px 24px;
-  /* font-family: 'pretendard'; */
+  font-family: 'pretendard';
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .header {
@@ -16,24 +18,28 @@
   padding-bottom: 15px;
 }
 
-span {
-  font-weight: 700;
-}
-
 .senderInfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-left: 14px;
+  font-size: 20px;
+}
+
+.senderName {
+  font-weight: 700;
 }
 
 .content {
   font-size: 18px;
   color: #4A4A4A;
-  margin-top: 16x;
+  margin-top: 16px;
   margin-bottom: 16px;
 }
 
 .createdAt {
+  position: absolute;
+  bottom: 24px;
   font-size: 12px;
   font-weight: 400;
   color:#999999;
