@@ -21,15 +21,21 @@ function resolveOutlinedSizeClass(styles, size, isIcon) {
   return sizeClass;
 }
 
-export function getButtonClassName({ variant, state, size, isIcon = false }) {
+export function getButtonClassName({
+  variant,
+  visualState,
+  size,
+  isIcon = false,
+}) {
   const styles = variantStyles[variant];
   if (!styles) throw new Error(`지정되지 않은 스타일 variant: ${variant}`);
-  if (!styles[state]) throw new Error(`지정되지 않은 타입 state: ${state}`);
+  if (!styles[visualState])
+    throw new Error(`지정되지 않은 타입 state: ${visualState}`);
 
-  const sizeClassName =
+  const designedClassName =
     variant === 'outlined'
       ? resolveOutlinedSizeClass(styles, size, isIcon)
       : styles.button;
 
-  return [base.buttonBase, sizeClassName, styles[state]].join(' ');
+  return [base.buttonBase, designedClassName, styles[visualState]].join(' ');
 }

@@ -91,8 +91,6 @@
 
 .size40Fluid {
   display: inline-flex;
-
-  /* ✅ width 없음 → 글자 길이에 따라 버튼 길이 유동 */
   width: auto;
   height: 40px;
   min-width: fit-content;

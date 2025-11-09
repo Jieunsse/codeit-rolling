@@ -6,7 +6,7 @@ import { validateButtonIcon } from '@components/common/button/utils/validateButt
 export default function Button({
   buttonName,
   variant = 'primary',
-  state = 'enabled',
+  visualState = 'enabled',
   isIcon = false,
   ...props
 }) {
@@ -17,14 +17,18 @@ export default function Button({
 
   const className = getButtonClassName({
     variant,
-    state,
+    visualState,
     isIcon,
     size: props.size,
   });
   const icon = getButtonIcon({ variant, className, isIcon });
 
   return (
-    <button className={className} disabled={state === 'disabled'} {...props}>
+    <button
+      className={className}
+      disabled={visualState === 'disabled'}
+      {...props}
+    >
       {icon && <img src={icon.src} alt="icon" className={icon.className} />}
       <span>{buttonName}</span>
     </button>
