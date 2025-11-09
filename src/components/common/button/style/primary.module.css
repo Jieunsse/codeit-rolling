@@ -3,7 +3,9 @@
   height: 56px;
   padding: 14px 24px;
   border-radius: 12px;
+  font-size: 18px;
   font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--btn-primary-color-enabled);
   background-color: var(--btn-primary-bg-enabled);
   gap: 10px;

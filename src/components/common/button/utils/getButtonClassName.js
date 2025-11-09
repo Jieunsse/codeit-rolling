@@ -12,10 +12,10 @@ const variantStyles = {
 function resolveOutlinedSizeClass(styles, size, isIcon) {
   const isFluid = isIcon && size !== 56;
   const classKey = `size${size}${isFluid ? 'Fluid' : ''}`;
-  const sizeClass = styles[classKey] ?? styles[`size${size}`];
+  const sizeClass = styles[classKey];
 
   if (!sizeClass) {
-    throw new Error(`지정되지 않은 사이즈: ${size}`);
+    throw new Error(`지정되지 않은 사이즈: ${classKey}`);
   }
 
   return sizeClass;
