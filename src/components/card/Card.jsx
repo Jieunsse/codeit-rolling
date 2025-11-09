@@ -1,4 +1,4 @@
-import ProfileImage from '../common/ProfileImage';
+import ProfileImage from '../common/profileImage/ProfileImage';
 import RelationBadge from '../common/badge/relationBadge/RelationBadge';
 import styles from './Card.module.css';
 
