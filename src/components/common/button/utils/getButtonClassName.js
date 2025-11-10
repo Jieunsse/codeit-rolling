@@ -30,7 +30,7 @@ export function getButtonClassName({
   const styles = variantStyles[variant];
   if (!styles) throw new Error(`지정되지 않은 스타일 variant: ${variant}`);
   if (!styles[visualState])
-    throw new Error(`지정되지 않은 타입 state: ${visualState}`);
+    throw new Error(`지정되지 않은 타입 visualState: ${visualState}`);
 
   const designedClassName =
     variant === 'outlined'
