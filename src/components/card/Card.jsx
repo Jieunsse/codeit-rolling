@@ -15,7 +15,7 @@ function Card({
           <ProfileImage imageUrl={profileImageUrl}/>
           <div className={styles.senderInfo}>
             <p className={styles.sender}>From. <span className={styles.senderName}>{sender}</span></p>
-            <RelationBadge relationship={relationship}/>
+            <RelationBadge badgeName={relationship}/>
           </div>
         </div>
         <div className={styles.content}>{content}</div>
