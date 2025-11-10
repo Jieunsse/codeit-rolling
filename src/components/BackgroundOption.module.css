@@ -1,0 +1,18 @@
+
+.card {
+  width: 168px;
+  height: 168px;
+  border-radius: 16px;
+  border: 1px solid #fff; 
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 체크 이미지 중앙 배치 */
+.check {
+  width: 44px;
+  height: 44px;
+}
