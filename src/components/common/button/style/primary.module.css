@@ -6,36 +6,36 @@
   font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--btn-primary-color-enabled);
-  background-color: var(--btn-primary-bg-enabled);
+  color: var(--white);
+  background-color: var(--purple-600);
   gap: 10px;
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* --- 상태 클래스 --- */
 .enabled {
-  color: var(--btn-primary-color-enabled);
-  background-color: var(--btn-primary-bg-enabled);
+  color: var(--white);
+  background-color: var(--purple-600);
 }
 
 .disabled {
-  color: var(--btn-primary-color-disabled);
-  background-color: var(--btn-primary-bg-disabled);
+  color: var(--white);
+  background-color: var(--gray-300);
   cursor: not-allowed;
   opacity: 0.8;
 }
 
 .hover {
-  background-color: var(--btn-primary-bg-hover);
+  background-color: var(--purple-700);
 }
 
 .pressed {
-  background-color: var(--btn-primary-bg-pressed);
+  background-color: var(--purple-800);
 }
 
 .focus {
   border: 2px solid var(--purple-900);
-  background-color: var(--btn-primary-bg-focus);
+  background-color: var(--purple-800);
 }
 
 /* --- 반응형 --- */

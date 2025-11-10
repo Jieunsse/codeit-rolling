@@ -7,24 +7,3 @@
   align-items: center;
   justify-content: center;
 }
-
-/* 디자인 시스템 작업 완료되면 삭제 */
-:root {
-  /* Primary 색상 토큰 */
-  --btn-primary-bg-enabled: #9747FF;
-  --btn-primary-bg-hover: #861DEE;
-  --btn-primary-bg-pressed: #6E0AD1;
-  --btn-primary-bg-focus: #6E0AD1;
-  --btn-primary-bg-disabled: #CCCCCC;
-  --btn-primary-color-enabled: #ffffff;
-  --btn-primary-color-disabled: #ffffff;
-  --purple-900: #5603A7;
-
-
-  /* Secondary 색상 토큰 */
-  --purple-100: #F8F0FF;
-  --purple-600: #9935FF;
-  --purple-700: #861DEE;
-  --purple-800: #6E0AD1;
-  --gray-300: #CCCCCC;
-}
