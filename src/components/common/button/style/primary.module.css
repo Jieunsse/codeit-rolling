@@ -1,0 +1,50 @@
+.button {
+  width: 208px;
+  height: 56px;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  background-color: var(--purple-600);
+  gap: 10px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* --- 상태 클래스 --- */
+.enabled {
+  color: var(--white);
+  background-color: var(--purple-600);
+}
+
+.disabled {
+  color: var(--white);
+  background-color: var(--gray-300);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.hover {
+  background-color: var(--purple-700);
+}
+
+.pressed {
+  background-color: var(--purple-800);
+}
+
+.focus {
+  border: 2px solid var(--purple-900);
+  background-color: var(--purple-800);
+}
+
+/* --- 반응형 --- */
+@media (width <= 768px) {
+  .button {
+    width: 122px;
+    height: 40px;
+    padding: 7px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+}
