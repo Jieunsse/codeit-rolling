@@ -1,4 +1,4 @@
-import closeIcon from '../../assets/close.svg';
+import closeIcon from '@components/common/assets/close.svg';
 
 function CloseButton({ onClick }) {
   return(
