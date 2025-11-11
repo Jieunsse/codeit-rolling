@@ -17,5 +17,6 @@
   color: #ffffff;
   font-size: 16px;
   flex-grow: 1;
-  /* To-do: font-family, font-weight 적용*/
+  font-family: Pretendard;
+  font-weight: 400;
 }
