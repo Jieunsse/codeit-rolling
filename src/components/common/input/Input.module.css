@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+/* 기본 인풋 스타일 */
+.input {
+  width: 320px;
+  height: 50px;
+  padding: 12px 16px;
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  background-color: var(--white);
+  font-size: 16px;
+  color: var(--gray-900);
+}
+
+/* placeholder 색상 */
+.input::placeholder {
+  color: var(--gray-700);
+}
+
+/* 활성 상태 (focus) */
+.input:focus {
+  border: 2px solid var(--gray-700);
+  outline: none;
+}
+
+/* 에러 상태 (기본) */
+.error {
+  border: 1px solid var(--error);
+}
+
+/* 에러이면서 포커스된 상태 */
+.error:focus {
+  border: 1px solid var(--error);
+}
+
+/* 비활성 상태 */
+.input:disabled {
+  background-color: var(--gray-50);
+  color: var(--gray-500);
+  border-color: var(--gray-300);
+  cursor: not-allowed;
+}
+
+/* 에러 메시지 */
+.errorMessage {
+  color: var(--error);
+  font-size: 13px;
+  margin-top: 6px;
+}
