@@ -1,0 +1,49 @@
+.container {
+  width: 720px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Arial, sans-serif;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #f2f2f2;
+  padding: 6px 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.toolbar button {
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+.toolbar button:hover { background-color: #e0e0e0; }
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color: #ddd;
+}
+
+.editor {
+  min-height: 260px;
+  padding: 12px;
+  line-height: 1.6;
+  outline: none;
+  color: #222;
+  white-space: pre-wrap;     /* 줄바꿈 보존 */
+}
+
+/* contentEditable의 완전 빈 상태에서만 placeholder 표시 */
+.editor:empty::before {
+  content: attr(data-placeholder);
+  color: #aaa;
+}

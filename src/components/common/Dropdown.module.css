@@ -1,72 +1,98 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-/* 옵션 박스를 버튼 아래에 정확히 붙이기 위한 기준 컨테이너 */
+/* ▼ 옵션 박스를 버튼 아래에 정확히 붙이기 위한 기준 컨테이너 */
 .container {
   position: relative;
   width: 320px;
 }
 
-/* 트리거 버튼 (Input과 동일 톤) */
+/* ▼ 트리거 버튼 (Input과 동일 톤) */
 .trigger {
   width: 320px;
   height: 50px;
   padding: 12px 16px;
-  border: 1px solid #CCCCCC;
+  border: 1px solid var(--gray-300);
   border-radius: 8px;
-  background-color: #FFFFFF;
+  background-color: var(--white);
   font-size: 16px;
-  color: #181818;
+  color: var(--gray-900);
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  font-family: var(--font-body);
 }
 
-.trigger:hover:not(:disabled) { border-color: #555555; }
+/* hover 상태: 강조 테두리 */
+.trigger:hover:not(:disabled) {
+  border-color: var(--gray-700);
+}
 
+/* 비활성화 상태 */
 .trigger:disabled {
-  background-color: #F9FAFB;
-  color: #999999;
-  border-color: #CCCCCC;
+  background-color: var(--gray-50);
+  color: var(--gray-500);
+  border-color: var(--gray-300);
 }
-.error { border-color: #DC3A3A; }
 
-/* 라벨/아이콘 */
-.label { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-.icon { width: 20px; height: 20px; pointer-events: none; }
+/* 오류 상태 */
+.error {
+  border-color: var(--error);
+}
 
-/* 옵션 리스트: 드롭다운 패널 (시안 반영) */
+/* ▼ 라벨 / 아이콘 */
+.label {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+/* ▼ 옵션 리스트 (드롭다운 패널) */
 .optionList {
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
   width: 100%;
-  background-color: #FFFFFF;
+  background-color: var(--white);
   border-radius: 8px;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08); /* #000 8% */
-  z-index: 1000;                /* 겹침 해결 */
-  overflow: hidden;             /* radius 안쪽으로 hover 배경 클립 */
-  padding: 0;                   /* 행 전체 hover 배경을 위해 padding 제거 */
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08); /* 동일 유지 */
+  z-index: 1000;
+  overflow: hidden;
+  padding: 0;
 }
 
-/* 각 옵션: 내부 패딩으로 시안의 상하12 좌우16 적용 */
+/* ▼ 각 옵션 아이템 */
 .optionItem {
   padding: 12px 16px;
   font-size: 16px;
-  color: #181818;
+  color: var(--gray-900);
   cursor: pointer;
   transition: background-color 0.15s ease;
+  font-family: var(--font-body);
 }
 
-/* hover 전역 배경 (#F6F6F6) — 칸 전체에 적용 */
-.optionItem:hover { background-color: #F6F6F6; }
+/* hover 전역 배경 */
+.optionItem:hover {
+  background-color: var(--gray-100);
+}
 
-/* 선택 유지 강조(필요 시) */
-.active { background-color: #F6F6F6; }
+/* 선택 유지 강조 */
+.active {
+  background-color: var(--gray-100);
+}
 
-/* 에러 메시지 */
+/* ▼ 에러 메시지 */
 .errorMessage {
-  color: #DC3A3A;
+  color: var(--error);
   font-size: 13px;
   margin-top: 6px;
+  font-family: var(--font-body);
 }

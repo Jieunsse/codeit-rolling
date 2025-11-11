@@ -1,7 +1,22 @@
 import { useState } from "react";
 import styles from "@/components/common/Dropdown.module.css";
-import arrowDown from "@/assets/arrow_down.png";
-import arrowTop from "@/assets/arrow_top.png";
+import arrowDown from "@/components/common/assets/arrow-down.png";
+import arrowTop from "@components/common/assets/arrow-top.png";
+
+/**
+ * Dropdown Component
+ * 
+ * - `options`는 반드시 `value`와 `label`을 key로 가지는 객체 배열이어야 합니다.
+ *   - ex) [{ value: "friend", label: "친구" }, { value: "co-worker", label: "동료" }]
+ *   - 이유: value는 식별자 역할, label은 실제 사용자에게 표시되는 텍스트 역할이기 때문입니다.
+ * 
+ * @component
+ * @param {function} onChange - 옵션 선택 시 호출되는 콜백함수 (선택된 option의 value를 인자로 전달)
+ * @param {Array<{value: string|number, label: string}>} options - 표시할 옵션 목록 (필수: value, label)
+ * @param {string} [className=""] - 추가적인 클래스 이름 (선택적)
+ * @param {boolean} [disabled=false] - 드롭다운 비활성화 여부
+ * @param {boolean} [hasError=false] - 오류 상태 여부
+ */
 
 function Dropdown({
   value,
@@ -14,10 +29,8 @@ function Dropdown({
   errorMessage = "필수 입력 항목입니다",
 }) {
 
-  // 드롭다운의 상태
   const [isOpen, setIsOpen] = useState(false);
 
-  // isOpen 값을 true/false로 토글하여 드롭다운 메뉴 열기/닫기
   const handleToggle = () => {
     if (disabled) return;
     setIsOpen((prev) => !prev);
@@ -29,7 +42,11 @@ function Dropdown({
     setIsOpen(false);
   };
 
-  // 현재 value와 label이라는 key를 가진 객체 배열을 전제로 작동하는 구조 반드시 있어야함
+  /**
+   * 현재 선택된 value에 해당하는 label을 찾아 표시
+   * - value와 일치하는 option 객체를 찾아 그 label을 반환
+   * - value가 없을 경우 placeholder를 대신 표시
+   */
   const currentLabel =
     value ? options.find((opt) => opt.value === value)?.label : "";
 
@@ -45,14 +62,16 @@ function Dropdown({
           <span className={styles.label}>
             {currentLabel || placeholder}
           </span>
+
+          {/* 열림/닫힘 상태에 따른 화살표 아이콘 변경 */}
           <img
             src={isOpen ? arrowTop : arrowDown}
             alt=""
             className={styles.icon}
-            aria-hidden="true"
           />
         </button>
 
+        {/* 드롭다운 옵션 목록 */}
         {isOpen && (
           <ul className={styles.optionList}>
             {options.map((option) => (
