@@ -1,5 +1,5 @@
 import styles from './ProfileImage.module.css';
-import defaultProfile from '../../../assets/default_profile.svg';
+import defaultProfile from '@components/card/assets/default_profile.svg';
 
 function ProfileImage({imageUrl}) {
   const src = imageUrl ? imageUrl : defaultProfile;
