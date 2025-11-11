@@ -1,6 +1,6 @@
-import ProfileImage from '../common/profileImage/ProfileImage';
-import RelationBadge from '../common/badge/relationBadge/RelationBadge';
-import trashImage from '../../assets/trash.svg';
+import ProfileImage from '@components/common/profileImage/ProfileImage';
+import RelationBadge from '@components/common/badge/relationBadge/RelationBadge';
+import trashImage from '@components/card/assets/trash.svg';
 import styles from './Card.module.css';
 
 function Card({
@@ -16,7 +16,7 @@ function Card({
           <ProfileImage imageUrl={profileImageUrl}/>
           <div className={styles.senderInfo}>
             <p className={styles.sender}>From. <span className={styles.senderName}>{sender}</span></p>
-            <RelationBadge badgeName={relationship}/>
+            {/* <RelationBadge badgeName={relationship}/> */}
           </div>
           <button className={styles.deleteBtn}>
             <img src={trashImage} alt="삭제 버튼" />

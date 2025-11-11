@@ -1,5 +1,5 @@
 import styles from './AddCard.module.css';
-import addButton from '../../assets/add_button.svg';
+import addButton from '@components/card/assets/add_button.svg';
 
 function AddCard() {
   return (
