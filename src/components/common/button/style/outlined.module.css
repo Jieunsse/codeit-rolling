@@ -1,0 +1,221 @@
+/* === 상태별 === */
+
+.enabled {
+  border: 1px solid var(--gray-300);
+  color: var(--gray-900);
+  background-color: var(--white);
+  opacity: 1;
+}
+
+.hover {
+  border: 1px solid var(--gray-300);
+  color: var(--gray-900);
+  background-color: var(--gray-100);
+  opacity: 1;
+}
+
+.pressed {
+  border: 1px solid var(--gray-300);
+  color:var(--gray-900);
+  background-color:var(--gray-100);
+  opacity: 1;
+}
+
+.focus {
+  border: 1px solid var(--gray-500);
+  color: var(--gray-900);
+  background-color: var(--white);
+  opacity: 1;
+}
+
+.disabled {
+  border: 1px solid var(--gray-300);
+  color: var(--white);
+  background-color: var(--gray-300);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+/* === 사이즈별 === */
+
+.size56 {
+  height: 56px;
+  min-width: 192px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  gap: 10px;
+  align-self: flex-start;
+}
+
+.size40 {
+  height: 40px;
+  min-width: 122px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+  gap: 10px;
+  align-self: flex-start;
+}
+
+.size36 {
+  height: 36px;
+  min-width: 122px;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  gap: 10px;
+  align-self: flex-start;
+}
+
+.size28 {
+  height: 28px;
+  min-width: 122px;
+  padding: 2px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  gap: 10px;
+  align-self: flex-start;
+}
+
+.size40Fluid {
+  display: inline-flex;
+  width: auto;
+  height: 40px;
+  min-width: fit-content;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Outlined 36 - Fluid */
+.size36Fluid {
+  display: inline-flex;
+  width: auto;
+  height: 36px;
+  min-width: fit-content;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Outlined 28 - Fluid */
+.size28Fluid {
+  display: inline-flex;
+  width: auto;
+  height: 28px;
+  min-width: fit-content;
+  padding: 2px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.icon24 {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.icon20 {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.disabled .icon20,
+.disabled .icon24 {
+  filter: brightness(0) invert(1);
+}
+
+/* === Outlined 40 + Icon : 상태별 width === */
+.size40Fluid.enabled {
+  width: 125px;
+}
+
+.size40Fluid.hover {
+  width: 103px;
+}
+
+.size40Fluid.pressed {
+  width: 118px;
+}
+
+.size40Fluid.focus {
+  width: 102px;
+}
+
+.size40Fluid.disabled {
+  width: 122px;
+}
+
+/* === Outlined 36 + Icon : 상태별 width === */
+.size36Fluid.enabled {
+  width: 119px;
+}
+
+.size36Fluid.hover {
+  width: 104px;
+}
+
+.size36Fluid.pressed {
+  width: 120px;
+}
+
+.size36Fluid.focus {
+  width: 104px;
+}
+
+.size36Fluid.disabled {
+  width: 124px;
+}
+
+/* === Outlined 28 + Icon : 상태별 width === */
+.size28Fluid.enabled {
+  width: 107px;
+}
+
+.size28Fluid.hover {
+  width: 94px;
+}
+
+.size28Fluid.pressed {
+  width: 107px;
+}
+
+.size28Fluid.focus {
+  width: 94px;
+}
+
+.size28Fluid.disabled {
+  width: 110px;
+}
