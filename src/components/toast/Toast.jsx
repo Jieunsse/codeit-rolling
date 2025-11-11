@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import completedIcon from '../../assets/completed.svg';
+import completedIcon from '@components/common/assets/completed.svg';
 import CloseButton from './CloseButton';
 import styles from './Toast.module.css';
 
