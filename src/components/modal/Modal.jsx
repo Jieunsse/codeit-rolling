@@ -1,5 +1,8 @@
 import { createPortal } from 'react-dom';
 import styles from './Modal.module.css';
+import ModalHeader from './ModalHeader';
+import ModalContent from './ModalContent';
+import ModalFooter from './ModalFooter';
 
 function Modal({
   isOpen,
@@ -16,29 +19,14 @@ function Modal({
   return createPortal(
     <div className={styles.overlay}>
       <div className={styles.modal}>
-        <div className={styles.header}>
-          <div className={styles.userInfo}>
-            <div className={styles.profileImg}>{profileImg}</div>
-            <div>
-              <div className={styles.name}>
-                <span className={styles.label}>From.</span>
-                <span className={styles.username}>{name}</span>
-              </div>
-              <div className={styles.badge}>{badge}</div>
-            </div>
-          </div>
-          <div className={styles.date}>{createAt}</div>
-        </div>
-        <div className={styles.messageBox}>
-          <div className={styles.scrollArea}>
-            <p className={styles.message}>{message}</p>
-          </div>
-        </div>
-        <div className={styles.footer}>
-          <button onClick={onClose} className={styles.button}>
-            확인
-          </button>
-        </div>
+        <ModalHeader
+          profileImg={profileImg}
+          name={name}
+          badge={badge}
+          createAt={createAt}
+        />
+        <ModalContent message={message} />
+        <ModalFooter onClose={onClose} />
       </div>
     </div>,
     document.getElementById('modal-root')
