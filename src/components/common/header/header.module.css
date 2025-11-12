@@ -6,9 +6,10 @@
 
 .headerContainer {
   display: flex;
-  justify-content: space-between;
+  margin-top: 11px;
+  margin-bottom: 12px;
   align-items: center;
-  height: 100%;
+  justify-content: space-between;
 }
 
 .logo {
