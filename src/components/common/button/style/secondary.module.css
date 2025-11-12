@@ -1,0 +1,44 @@
+.button {
+  width: 122px;
+  height: 40px;
+  padding: 7px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+  gap: 10px;
+}
+
+/* --- 상태 클래스 --- */
+.enabled {
+  border: 1px solid var(--purple-600);
+  color: var(--purple-700);
+  background-color: #ffffff;
+}
+
+.disabled {
+  color: #ffffff;
+  background-color: var(--gray-300);
+}
+
+.hover {
+  border: 1px solid var(--purple-700);
+  color: var(--purple-600);
+  background-color: var(--purple-100);
+}
+
+.pressed {
+  border: 1px solid var(--purple-800);
+  color: var(--purple-600);
+  background-color: var(--purple-100);
+}
+
+.focus {
+  border: 1px solid var(--purple-800);
+  color: #9747FF;
+  background-color: #ffffff;
+  
+}
+
+

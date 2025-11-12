@@ -1,0 +1,9 @@
+.buttonBase {
+  display: inline-flex;
+  border: none;
+  font-family: Pretendard, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-items: center;
+  justify-content: center;
+}

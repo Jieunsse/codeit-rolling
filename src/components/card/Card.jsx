@@ -6,7 +6,7 @@ import styles from './Card.module.css';
 function Card({
   sender, 
   profileImageUrl,
-  relationship,
+  relationship = '친구',
   content, 
   createdAt,
 }) {
@@ -16,7 +16,7 @@ function Card({
           <ProfileImage imageUrl={profileImageUrl}/>
           <div className={styles.senderInfo}>
             <p className={styles.sender}>From. <span className={styles.senderName}>{sender}</span></p>
-            {/* <RelationBadge badgeName={relationship}/> */}
+            <RelationBadge title={relationship}/>
           </div>
           <button className={styles.deleteBtn}>
             <img src={trashImage} alt="삭제 버튼" />

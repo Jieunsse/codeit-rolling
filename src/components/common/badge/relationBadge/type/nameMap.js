@@ -1,0 +1,6 @@
+export const nameMap = {
+  친구: 'friend',
+  동료: 'colleague',
+  가족: 'family',
+  지인: 'acquaintance',
+};
