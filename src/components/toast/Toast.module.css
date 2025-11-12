@@ -14,7 +14,7 @@
 }
 
 .container p {
-  color: #ffffff;
+  color: var(--white);
   font-size: 16px;
   flex-grow: 1;
   font-family: Pretendard;
