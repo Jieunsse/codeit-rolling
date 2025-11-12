@@ -1,5 +1,5 @@
-import add24 from '@components/common/button/svg/add-24.svg';
-import add20 from '@components/common/button/svg/add-20.svg';
+import add24 from '@components/common/assets/button/add-24.svg';
+import add20 from '@components/common/assets/button/add-20.svg';
 import outlinedStyle from '@components/common/button/style/outlined.module.css';
 
 const iconSize = {
