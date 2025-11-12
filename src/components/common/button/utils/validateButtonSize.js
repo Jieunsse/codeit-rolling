@@ -1,8 +1,13 @@
 export function validateButtonSize(size) {
-  const allowedSizes = [56, 40, 36, 28];
+  const OUTLINED_56 = 56;
+  const OUTLINED_40 = 40;
+  const OUTLINED_36 = 36;
+  const OUTLINED_28 = 28;
+
+  const allowedSizes = [OUTLINED_56, OUTLINED_40, OUTLINED_36, OUTLINED_28];
 
   if (!size) {
-    return 56;
+    return OUTLINED_56;
   }
 
   if (!allowedSizes.includes(size)) {

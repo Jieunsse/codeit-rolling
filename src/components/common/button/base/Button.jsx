@@ -4,7 +4,7 @@ import { validateButtonSize } from '@components/common/button/utils/validateButt
 import { validateButtonIcon } from '@components/common/button/utils/validateButtonIcon.js';
 
 export default function Button({
-  buttonName,
+  title,
   variant = 'primary',
   visualState = 'enabled',
   isIcon = false,
@@ -30,7 +30,7 @@ export default function Button({
       {...props}
     >
       {icon && <img src={icon.src} alt="icon" className={icon.className} />}
-      <span>{buttonName}</span>
+      <span>{title}</span>
     </button>
   );
 }

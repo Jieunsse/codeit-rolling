@@ -1,12 +1,11 @@
 import styles from '@components/common/badge/relationBadge/relationBadge.module.css';
-import nameMap from '@components/common/badge/relationBadge/type/relationBadgeMap.json';
 import { validateBadgeName } from '@components/common/badge/util/validateBadgeName.js';
+import { getBadgeColorClass } from '@components/common/badge/util/getBadgeColorClass.js';
 
 export default function RelationBadge({ badgeName }) {
   validateBadgeName(badgeName);
 
-  const key = nameMap[badgeName];
-  const colorClass = styles[key];
+  const colorClassName = getBadgeColorClass(badgeName, styles);
 
-  return <div className={`${styles.badge} ${colorClass}`}>{badgeName}</div>;
+  return <div className={`${styles.badge} ${colorClassName}`}>{badgeName}</div>;
 }
