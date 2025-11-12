@@ -16,18 +16,14 @@ import defaultProfile from '@components/card/assets/default_profile.svg';
  * @returns {JSX.Element} 프로필 이미지를 담고 있는 JSX 요소
  */
 
-function ProfileImage({imageUrl}) {
+function ProfileImage({ imageUrl, className = '', style = {}, alt }) {
   const src = imageUrl ? imageUrl : defaultProfile;
 
   return (
-    <div className={styles.container}>
-      <img 
-        className={styles.image}
-        src={src} 
-        alt='프로필 이미지'
-      />
+    <div className={`${styles.container} ${className}`} style={style}>
+      <img className={styles.image} src={src} alt={alt || '프로필 이미지'} />
     </div>
-  )
+  );
 }
 
 export default ProfileImage;
