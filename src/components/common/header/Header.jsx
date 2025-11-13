@@ -1,5 +1,3 @@
-// Header.jsx 전체 코드
-
 import logo from '@/components/assets/logo.svg';
 import styles from '@components/common/header/header.module.css';
 import { Link } from 'react-router-dom';
