@@ -1,7 +1,7 @@
 import Header from '@components/common/header/Header.jsx';
 import Button from '@components/common/button/base/Button.jsx';
 import { useNavigate } from 'react-router-dom';
-import CardListWrapper from '@pages/list/components/CardListWrapper.jsx';
+import CardListWrapper from '@pages/list/components/wrapper/CardListWrapper.jsx';
 import { cardListMock } from '@pages/list/mock/cardListMock.js';
 import { RollingPaperMock } from '@pages/list/mock/cardListMock.js';
 import styles from './listPage.module.css';
