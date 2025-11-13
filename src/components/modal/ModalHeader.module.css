@@ -1,0 +1,41 @@
+.header {
+  padding-bottom: 19px;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.userInfo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+.profileImg {
+  width: 56px;
+  height: 56px;
+  background-color: red;
+}
+.name {
+  font-family: Pretendard, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 6px;
+}
+.label {
+  font-weight: 400;
+  color: #000000;
+  margin-right: 6px;
+}
+.username {
+  font-weight: 700;
+  color: #000000;
+}
+.date {
+  font-family: Pretendard, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #999999;
+  letter-spacing: -0.5%;
+}
