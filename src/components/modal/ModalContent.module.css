@@ -1,0 +1,33 @@
+.messageBox {
+  height: 256px;
+  box-sizing: border-box;
+  padding-top: 16px;
+}
+
+.scrollArea {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 16px;
+  box-sizing: border-box;
+}
+.scrollArea::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollArea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollArea::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.message {
+  font-family: Pretendard, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #5a5a5a;
+  line-height: 1.56;
+  letter-spacing: -1%;
+}
