@@ -1,65 +1,12 @@
 .badge {
   width: 40px;
   height: 20px;
-<<<<<<< HEAD
-=======
   padding: 8px;
-  padding: 8px;
->>>>>>> dev
   border-radius: 4px;
   font-family: Pretendard, sans-serif;
   font-size: 14px;
   font-weight: 400;
-  line-height: 20px;
-<<<<<<< HEAD
   letter-spacing:-0.005em;
-  text-align: center;
-  padding: 8px 8px;
-}
-
-.friend {
-  background-color: var(--color-blue-100);
-  color: var(--color-blue-500);
-}
-
-.colleague {
-  background-color: var(--color-purple-100);
-  color: var(--color-purple-600);
-}
-
-.family {
-  background-color: var(--color-green-100);
-  color: var(--color-green-500);
-}
-
-.acquaintance {
-  background-color: var(--color-beige-100);
-  color: var(--color-beige-500);
-}
-
-/* 디자인 시스템 적용 전 테스트용 색상 코드
-.friend {
-  background-color: #E2F5FF;
-  color: #00A2F2;
-}
-
-.colleague {
-  background-color: #F8F0FF;
-  color: #9935FF;
-}
-
-.family {
-  background-color: #E4FBDC;
-  color: #2BA600;
-}
-
-.acquaintance {
-  background-color: #FFF0D6;
-  color: #FF8832;
-}
-*/
-=======
-  letter-spacing: -0.005em;
   text-align: center;
 }
 
@@ -82,4 +29,3 @@
   color: var(--beige-500);
   background-color: var(--beige-100);
 }
->>>>>>> dev
