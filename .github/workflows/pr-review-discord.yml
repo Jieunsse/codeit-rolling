@@ -36,9 +36,9 @@ jobs:
                   "url": $prurl,
                   "color": 3447003,
                   "fields": [
-                    {"name": "👤 Reviewer", "value": $reviewer, "inline": true},
-                    {"name": "📌 State", "value": $state, "inline": true},
-                    {"name": "💬 Review Comment", "value": ($body // "No comment")}
+                    {"name": "👤 리뷰어", "value": $reviewer, "inline": true},
+                    {"name": "📌 리뷰 상태", "value": $state, "inline": true},
+                    {"name": "💬 리뷰 코멘트", "value": ($body // "No comment")}
                   ]
                 }
               ]
