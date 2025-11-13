@@ -1,5 +1,9 @@
 import styles from './reactionBadge.module.css';
 
+/**
+ * @param {string} emoji - 표시할 이모지
+ * @param {number} count - 카운터에 전달할 값
+ */
 export default function ReactionBadge({ emoji, count }) {
   return (
 <<<<<<< HEAD

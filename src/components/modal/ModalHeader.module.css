@@ -1,6 +1,6 @@
 .header {
   padding-bottom: 19px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid var(--gray-200);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,7 +14,6 @@
 .profileImg {
   width: 56px;
   height: 56px;
-  background-color: red;
 }
 .name {
   font-family: Pretendard, sans-serif;
@@ -24,18 +23,18 @@
 }
 .label {
   font-weight: 400;
-  color: #000000;
+  color: var(--black);
   margin-right: 6px;
 }
 .username {
   font-weight: 700;
-  color: #000000;
+  color: var(--black);
 }
 .date {
   font-family: Pretendard, sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
-  color: #999999;
+  color: var(--gray-400);
   letter-spacing: -0.5%;
 }

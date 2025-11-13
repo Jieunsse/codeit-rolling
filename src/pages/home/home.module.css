@@ -1,0 +1,20 @@
+.imgContainer {
+  display: flex;
+  margin-top: 60px;
+  gap: 30px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner {
+  width: 1200px;
+  height: 324px;
+  border-radius: 16px;
+}
+
+.button {
+  width: 280px;
+  height: 56px;
+  border-radius: 12px;
+}
