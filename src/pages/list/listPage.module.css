@@ -1,0 +1,11 @@
+.listContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button {
+  width: 280px;
+  height: 56px;
+}
