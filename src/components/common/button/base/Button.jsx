@@ -3,10 +3,19 @@ import { getButtonIcon } from '@components/common/button/utils/getButtonIcon.js'
 import { validateButtonSize } from '@components/common/button/utils/validateButtonSize.js';
 import { validateButtonIcon } from '@components/common/button/utils/validateButtonIcon.js';
 
+/**
+ *
+ * @param title
+ * @param variant
+ * @param interactionState
+ * @param isIcon
+ * @param props
+ */
+
 export default function Button({
   title,
   variant = 'primary',
-  visualState = 'enabled',
+  interactionState = 'enabled',
   isIcon = false,
   ...props
 }) {
@@ -17,7 +26,7 @@ export default function Button({
 
   const className = getButtonClassName({
     variant,
-    visualState,
+    interactionState,
     isIcon,
     size: props.size,
   });
@@ -26,7 +35,7 @@ export default function Button({
   return (
     <button
       className={className}
-      disabled={visualState === 'disabled'}
+      disabled={interactionState === 'disabled'}
       {...props}
     >
       {icon && <img src={icon.src} alt="icon" className={icon.className} />}

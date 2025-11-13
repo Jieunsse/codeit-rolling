@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  position: relative;
+  width: 275px;
+  height: 260px;
+  border-radius: 16px;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 30px 24px 20px 24px;
+  z-index: 0;
+  overflow: hidden;
+}
+.containerShape {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 142px;
+  height: 142px;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+.valueImage .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* 어두운 반투명 레이어 */
+  z-index: -1;
+}

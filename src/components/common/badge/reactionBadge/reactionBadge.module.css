@@ -8,6 +8,15 @@
 .reactionBadge {
   width: 66px;
   height: 36px;
+<<<<<<< HEAD
+  background-color: rgba(0, 0, 0, 0.54);
+  border-radius: 32px;
+  font-family: Pretendard, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0;
+=======
   border-radius: 32px;
   font-family: Pretendard, sans-serif;
   font-size: 16px;
@@ -15,12 +24,19 @@
   line-height: 20px;
   letter-spacing: 0;
   background-color: rgb(0 0 0 / 54%);
+>>>>>>> dev
 }
 
 .emoji {
   width: 20px;
   height: 20px;
 }
+<<<<<<< HEAD
+.count {
+  font-size: 16px;
+  color: #ffffff;
+}
+=======
 
 .count {
   font-size: 16px;
@@ -28,3 +44,4 @@
 }
 
 
+>>>>>>> dev

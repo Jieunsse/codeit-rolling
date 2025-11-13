@@ -1,0 +1,52 @@
+name: Notify Discord on PR Review
+
+on:
+  pull_request_review:
+    types: [submitted]   # 리뷰가 제출(submit)될 때 트리거
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send message to Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          REVIEW_STATE: ${{ github.event.review.state }}
+          REVIEW_BODY: ${{ github.event.review.body }}
+          REVIEWER: ${{ github.event.review.user.login }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          echo "Sending PR Review notification to Discord..."
+
+          # JSON payload 생성
+          PAYLOAD=$(jq -n \
+            --arg content "**🔍 Pull Request Review Submitted**" \
+            --arg reviewer "$REVIEWER" \
+            --arg state "$REVIEW_STATE" \
+            --arg body "$REVIEW_BODY" \
+            --arg prtitle "$PR_TITLE" \
+            --arg prurl "$PR_URL" \
+            '{
+              "content": $content,
+              "embeds": [
+                {
+                  "title": $prtitle,
+                  "url": $prurl,
+                  "color": 3447003,
+                  "fields": [
+                    {"name": "👤 Reviewer", "value": $reviewer, "inline": true},
+                    {"name": "📌 State", "value": $state, "inline": true},
+                    {"name": "💬 Review Comment", "value": ($body // "No comment")}
+                  ]
+                }
+              ]
+            }'
+          )
+
+          # 디스코드 전송
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "$PAYLOAD" \
+               "$DISCORD_WEBHOOK_URL"
