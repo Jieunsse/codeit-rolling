@@ -26,8 +26,4 @@ function ProfileImage({ imageUrl, className = '', style = {}, alt }) {
   );
 }
 
-<<<<<<< HEAD
 export default ProfileImage;
-=======
-export default ProfileImage;
->>>>>>> dev
