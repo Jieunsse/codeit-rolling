@@ -1,4 +1,4 @@
-import logo from '@components/common/assets/logo.svg';
+import logo from '@components/assets/logo.svg';
 import styles from '@components/common/header/header.module.css';
 
 export default function Header() {
