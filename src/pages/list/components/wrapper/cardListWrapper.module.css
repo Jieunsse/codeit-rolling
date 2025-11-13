@@ -1,7 +1,35 @@
-.container {
+/* wrapper는 relative로 세팅 */
+.wrapper {
   display: flex;
-  margin-bottom: 50px;
-  gap: 20px;
+  position: relative;
+  width: 100%;
   align-items: center;
-  justify-content: center;
+}
+
+/* 카드 리스트는 가운데만 차지 */
+.cardContainer {
+  display: flex;
+  width: 100%;
+  gap: 24px;   /* 카드 간격 */
+  overflow: hidden;
+}
+
+/* 좌우 화살표는 카드 영역 위에 겹쳐서 배치 */
+.leftArrow,
+.rightArrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.leftArrow {
+  left: -36px;
+}
+
+.rightArrow {
+  right: -36px;
 }
