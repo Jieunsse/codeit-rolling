@@ -3,13 +3,17 @@ import RelationBadge from '@components/common/badge/relationBadge/RelationBadge'
 import trashImage from '@components/card/assets/trash.svg';
 import styles from './Card.module.css';
 
-function Card({
-  sender, 
-  profileImageUrl,
-  relationship = '친구',
-  content, 
-  createdAt,
-}) {
+function Card({ data }) {
+  const {
+    sender, 
+    profileImageUrl,
+    relationship,
+    content, 
+    createdAt,
+  } = data;
+
+  const datePart = createdAt.split('T')[0];
+
   return (
       <div className={styles.container}>
         <div className={styles.header}>
@@ -23,7 +27,7 @@ function Card({
           </button>
         </div>
         <div className={styles.content}>{content}</div>
-        <p className={styles.createdAt}>{createdAt}</p>
+        <p className={styles.createdAt}>{datePart}</p>
       </div>
   );
 }
