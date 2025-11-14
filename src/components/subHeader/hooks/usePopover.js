@@ -14,7 +14,6 @@ export function usePopover() {
       const popEl = popoverRef.current;
       const btnEl = buttonRef.current;
 
-      // 버튼 클릭 또는 Popover 내부 클릭이면 무시
       if (popEl?.contains(e.target) || btnEl?.contains(e.target)) return;
 
       closePopover();
