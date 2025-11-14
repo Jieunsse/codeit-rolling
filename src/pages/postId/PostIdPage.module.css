@@ -12,6 +12,46 @@
   background-color: var(--white);
 }
 
+.buttonContainer {
+  margin-top: 63px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 600;
+  text-shadow: 0.8px 0.8px 2px var(--gray-300);
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  
+  width: 92px;
+  height: 39px;
+  border-radius: 6px;
+  background-color: var(--purple-600);
+  color: var(--white);
+  font-family: Pretendard, sans-serif;
+  font-size: 16px;
+}
+
+.deleteBtn:hover {
+  background-color: var(--purple-700);
+}
+
 .main {
   width: 1200px;
   height: auto;
@@ -19,7 +59,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-top: 113px;
+  margin-top: 11px;
 
 }
 

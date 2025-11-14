@@ -2,12 +2,13 @@ import AddCard from "@/components/card/AddCard";
 import Card from "@/components/card/Card";
 import Header from "@/components/common/header/Header";
 import Toast from "@/components/toast/Toast";
+import Modal from "@/components/modal/Modal";
 import styles from "@/pages/postId/PostIdPage.module.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { getMappedColor } from "@/pages/postId/type/colorMap";
 import { getRecipient, getMessages } from '@/shared/api/recipientApi';
-import Modal from "@/components/modal/Modal";
+
 
 function PostIdPage() {
   // URL에서 recipientId 가져오기
@@ -83,6 +84,12 @@ function PostIdPage() {
       </div>
 
       <div className={styles.container}> 
+        <div className={styles.buttonContainer}>
+          <Link to='/list'>
+            <button className={styles.backBtn}>← 뒤로가기</button>
+          </Link>
+          <button className={styles.deleteBtn}>삭제하기</button>
+        </div>
         <div className={styles.main}>
           <AddCard recipientId={recipientId} />
           
