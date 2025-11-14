@@ -3,7 +3,7 @@ import RelationBadge from '@components/common/badge/relationBadge/RelationBadge'
 import trashImage from '@components/card/assets/trash.svg';
 import styles from './Card.module.css';
 
-function Card({ data }) {
+function Card({ data, onClick }) {
   const {
     sender, 
     profileImageUrl,
@@ -15,7 +15,7 @@ function Card({ data }) {
   const datePart = createdAt.split('T')[0];
 
   return (
-      <div className={styles.container}>
+      <div className={styles.container} onClick={onClick}>
         <div className={styles.header}>
           <ProfileImage imageUrl={profileImageUrl}/>
           <div className={styles.senderInfo}>

@@ -5,13 +5,12 @@
 }
 
 .headerContainer {
-  .headerContainer {
-    display: flex;
-    margin-top: 11px;
-    margin-bottom: 12px;
-    align-items: center;
-    justify-content: space-around;
-  }
+  box-sizing: border-box;
+  display: flex;
+  margin-top: 11px;
+  margin-bottom: 12px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {

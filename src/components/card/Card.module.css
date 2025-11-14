@@ -8,6 +8,7 @@
   padding: 28px 24px;
   font-family: Pretendard;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 }
 
 .header {
@@ -56,16 +57,21 @@
   z-index: 1000;
 }
 
-.container:hover .deleteBtn {
+/* .container:hover .deleteBtn {
   opacity: 1;
-}
+} */
 
 .content {
+  width: 336px;
+  height: 106px;
   font-size: 18px;
   color: var(--gray-600);
   margin-top: 16px;
-  margin-bottom: 16px;
   line-height: 150%;
+  overflow-y: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
 }
 
 .createdAt {
