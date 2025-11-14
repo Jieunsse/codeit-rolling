@@ -4,7 +4,6 @@ export function useEmojiPicker(onSelectEmoji) {
   const [isOpen, setIsOpen] = useState(false);
   const pickerRef = useRef(null);
 
-  const openPicker = () => setIsOpen(true);
   const closePicker = () => setIsOpen(false);
 
   const togglePicker = () => setIsOpen(prev => !prev);
