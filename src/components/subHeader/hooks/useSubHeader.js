@@ -18,6 +18,13 @@ export function useSubHeader() {
     togglePopover: onToggleArrowPopover,
   } = usePopover();
 
+  const {
+    isOpen: isShareOpen,
+    popoverRef: sharePopoverRef,
+    buttonRef: shareButtonRef,
+    togglePopover: onToggleSharePopover,
+  } = usePopover();
+
   return {
     isOpen,
     pickerRef,
@@ -29,5 +36,10 @@ export function useSubHeader() {
     arrowPopoverRef,
     arrowButtonRef,
     onToggleArrowPopover,
+
+    isShareOpen,
+    sharePopoverRef,
+    shareButtonRef,
+    onToggleSharePopover,
   };
 }
