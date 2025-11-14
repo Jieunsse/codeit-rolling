@@ -1,7 +1,10 @@
 import styles from '@components/common/badge/relationBadge/relationBadge.module.css';
-import nameMap from '@components/common/badge/relationBadge/type/relationBadgeMap.json';
 import { validateBadgeName } from '@components/common/badge/util/validateBadgeName.js';
+import { nameMap } from '@components/common/badge/relationBadge/type/nameMap.js';
 
+/**
+ * @param {string} title - 뱃지 이름(색상 매핑에 사용됨)
+ */
 export default function RelationBadge({ title }) {
   validateBadgeName(title);
 

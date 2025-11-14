@@ -23,19 +23,21 @@ function resolveOutlinedSizeClass(styles, size, isIcon) {
 
 export function getButtonClassName({
   variant,
-  visualState,
+  interactionState,
   size,
   isIcon = false,
 }) {
   const styles = variantStyles[variant];
   if (!styles) throw new Error(`지정되지 않은 스타일 variant: ${variant}`);
-  if (!styles[visualState])
-    throw new Error(`지정되지 않은 타입 visualState: ${visualState}`);
+  if (!styles[interactionState])
+    throw new Error(`지정되지 않은 타입 interactionState: ${interactionState}`);
 
   const designedClassName =
     variant === 'outlined'
       ? resolveOutlinedSizeClass(styles, size, isIcon)
       : styles.button;
 
-  return [base.buttonBase, designedClassName, styles[visualState]].join(' ');
+  return [base.buttonBase, designedClassName, styles[interactionState]].join(
+    ' '
+  );
 }
