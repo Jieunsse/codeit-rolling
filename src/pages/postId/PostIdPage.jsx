@@ -3,24 +3,11 @@ import Card from "@/components/card/Card";
 import Header from "@/components/common/header/Header";
 import Toast from "@/components/toast/Toast";
 import styles from "@/pages/postId/PostIdPage.module.css";
-import { getMappedColor } from "@/pages/postId/type/colorMap";
-import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { getMappedColor } from "@/pages/postId/type/colorMap";
 import { getRecipient, getMessages } from '@/shared/api/recipientApi';
-
-// const mockList = [
-//   { id: 1, sender: "박접신", content: "..." },
-//   { id: 2, sender: "강준모", content: "..." },
-//   { id: 3, sender: "장서영", content: "..." },
-//   { id: 4, sender: "강준모", content: "..." },
-//   { id: 5, sender: "장서영", content: "..." },
-//   { id: 6, sender: "강준모", content: "..." },
-//   { id: 7, sender: "장서영", content: "..." },
-//   { id: 8, sender: "강준모", content: "..." },
-//   { id: 9, sender: "장서영", content: "..." },
-//   { id: 10, sender: "강준모", content: "..." },
-// ]
-
+import Modal from "@/components/modal/Modal";
 
 function PostIdPage() {
   // URL에서 recipientId 가져오기
@@ -30,6 +17,19 @@ function PostIdPage() {
   const [recipientData, setRecipientData] = useState(null);
   const [messages, setMessages] = useState([]);
 
+  // 모달 상태, 클릭된 카드 데이터 상태
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(null);
+
+  const handleCardClcik = (cardData) => {
+    setSelectedCard(cardData);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedCard(null);
+  };
   
   useEffect(() => {
     if (!recipientId) return; 
@@ -90,13 +90,25 @@ function PostIdPage() {
             <Card 
               key={cardData.id} 
               data={cardData}  
+              onClick={() => handleCardClcik(cardData)}
             />
           ))}
         </div>
         <div className={styles.toast}>
           {/* 토스트 조건부 렌더링 */}
           <Toast />  
-        </div>            
+        </div>
+        { isModalOpen && selectedCard && (
+          <Modal 
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            profileImg={selectedCard.profileImgURL}
+            name={selectedCard.sender}
+            badge={selectedCard.relationship}
+            createAt={selectedCard.createAt}
+            message={selectedCard.content}  
+          />
+        )}            
       </div>
     </div>
   )
