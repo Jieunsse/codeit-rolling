@@ -7,6 +7,7 @@ export default function BadgeWrapper() {
       <ReactionBadge emoji="🙌" count={24} />
       <ReactionBadge emoji="😊" count={16} />
       <ReactionBadge emoji="👍" count={10} />
+      <ReactionBadge emoji="👍" count={10} />
     </div>
   );
 }
