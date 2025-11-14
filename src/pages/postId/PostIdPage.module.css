@@ -1,5 +1,4 @@
 .pageBackground {
-  background-color: var(--beige-200);
   min-height: 100vh;
 }
 
@@ -30,12 +29,9 @@
 }
 
 .toast {
-  position: fixed; 
-  
-  left: 50%; /* 뷰포트 가로 중앙에 위치 */
-  transform: translateX(-50%); /* 요소 너비의 50%만큼 왼쪽으로 이동하여 완벽한 중앙 정렬 */
-  
-  /* ✨ 하단에서 70px 띄우기 */
+  position: fixed;
+  left: 50%; 
+  transform: translateX(-50%); 
   bottom: 70px; 
   
   z-index: 1000;
