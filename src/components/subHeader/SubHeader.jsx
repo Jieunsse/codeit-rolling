@@ -25,7 +25,6 @@ export default function SubHeader({ title, emojiPicker, arrowPopover }) {
         <span className={styles.count}>n명이 작성했어요!</span>
         <BadgeWrapper />
 
-        {/* 🔽 ArrowDown */}
         <div className={styles.arrowDownWrapper}>
           <ShareButton
             icon={arrowDown}
