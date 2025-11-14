@@ -43,7 +43,6 @@ export default function SubHeader({ title, emojiPicker, arrowPopover }) {
           </div>
         </div>
 
-        {/* 😀 Emoji Picker */}
         <div className={styles.addButtonWrapper}>
           <ShareButton icon={add_24} onClick={onAddEmoji} ref={buttonRef} />
           <div
