@@ -6,6 +6,7 @@ import shareButton from '@components/assets/shareButton.svg';
 import EmojiPickerSkeleton from '@components/subHeader/components/emojiPickerSkeleton/EmojiPickerSkeleton.jsx';
 import BadgeWrapper from '@components/subHeader/components/badgeWrapper/BadgeWrapper.jsx';
 import arrowDown from '@components/assets/arrow_down.svg';
+import PopoverMenu from '@components/subHeader/components/popoverMenu/PopoverMenu.jsx';
 
 const EmojiPickerLazy = lazy(() => import('emoji-picker-react'));
 
@@ -33,12 +34,20 @@ export default function SubHeader({ title, emojiPicker, arrowPopover }) {
           />
           <div
             ref={arrowPopoverRef}
-            className={styles.arrowPopover}
-            style={{ display: isArrowOpen ? 'block' : 'none' }}
+            className={`${styles.arrowPopover} ${
+              isArrowOpen ? styles.visible : styles.hidden
+            }`}
           >
-            <div>옵션 1</div>
-            <div>옵션 2</div>
-            <div>옵션 3</div>
+            <PopoverMenu
+              items={[
+                { label: <BadgeWrapper />, value: 'badges' },
+                { label: <BadgeWrapper />, value: 'badges' },
+                { label: <BadgeWrapper />, value: 'badges' },
+              ]}
+              onSelect={item => {
+                console.log('선택한 옵션:', item);
+              }}
+            />
           </div>
         </div>
 
@@ -46,8 +55,9 @@ export default function SubHeader({ title, emojiPicker, arrowPopover }) {
           <ShareButton icon={add_24} onClick={onAddEmoji} ref={buttonRef} />
           <div
             ref={pickerRef}
-            className={styles.pickerWrapper}
-            style={{ display: isOpen ? 'block' : 'none' }}
+            className={`${styles.pickerWrapper} ${
+              isOpen ? styles.visible : styles.hidden
+            }`}
           >
             <Suspense fallback={<EmojiPickerSkeleton />}>
               <EmojiPickerLazy onEmojiClick={onEmojiSelect} />
