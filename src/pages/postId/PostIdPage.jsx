@@ -105,7 +105,7 @@ function PostIdPage() {
             profileImg={selectedCard.profileImgURL}
             name={selectedCard.sender}
             badge={selectedCard.relationship}
-            createAt={selectedCard.createAt}
+            createAt={selectedCard.createdAt}
             message={selectedCard.content}  
           />
         )}            
