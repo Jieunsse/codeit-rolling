@@ -34,7 +34,7 @@ function ModalHeader({ imageUrl, name, badge, createAt }) {
               <span className={styles.label}>From.</span>
               <span className={styles.username}>{name}</span>
             </div>
-            <RelationBadge badgeName={badge} />
+            <RelationBadge title={badge} />
           </div>
         </div>
         <div className={styles.date}>{createAt}</div>
