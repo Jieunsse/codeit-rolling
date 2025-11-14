@@ -4,15 +4,24 @@ import ShareButton from './components/shareButton/ShareButton.jsx';
 import add_24 from '@components/assets/add-24.svg';
 import shareButton from '@components/assets/shareButton.svg';
 import EmojiPickerSkeleton from '@components/subHeader/components/emojiPickerSkeleton/EmojiPickerSkeleton.jsx';
+import BadgeWrapper from '@components/subHeader/components/badgeWrapper/BadgeWrapper.jsx';
+import arrowDown from '@components/assets/arrow_down.svg';
 
-const EmojiPickerLazy = lazy(() => import('emoji-picker-react')); // Lazy Load
+const EmojiPickerLazy = lazy(() => import('emoji-picker-react'));
 
 export default function SubHeader({
   title,
+
   isOpen,
   onAddEmoji,
   onEmojiSelect,
   pickerRef,
+  buttonRef,
+
+  isArrowOpen,
+  onToggleArrowPopover,
+  arrowPopoverRef,
+  arrowButtonRef,
 }) {
   return (
     <section className={styles.subHeader}>
@@ -21,10 +30,28 @@ export default function SubHeader({
       <div className={styles.rightArea}>
         <div className={styles.profileImage}>프로필</div>
         <span className={styles.count}>n명이 작성했어요!</span>
-        <div className={styles.badgeList}>뱃지 목록</div>
+        <BadgeWrapper />
+
+        <div className={styles.arrowDownWrapper}>
+          <ShareButton
+            icon={arrowDown}
+            onClick={onToggleArrowPopover}
+            ref={arrowButtonRef}
+          />
+
+          <div
+            ref={arrowPopoverRef}
+            className={styles.arrowPopover}
+            style={{ display: isArrowOpen ? 'block' : 'none' }}
+          >
+            <div>옵션 1</div>
+            <div>옵션 2</div>
+            <div>옵션 3</div>
+          </div>
+        </div>
 
         <div className={styles.addButtonWrapper}>
-          <ShareButton icon={add_24} onClick={onAddEmoji} />
+          <ShareButton icon={add_24} onClick={onAddEmoji} ref={buttonRef} />
 
           <div
             ref={pickerRef}
