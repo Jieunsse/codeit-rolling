@@ -47,6 +47,9 @@ function Modal({
   if (!isOpen) {
     return null;
   }
+
+  const datePart = createAt.split('T')[0];
+
   return createPortal(
     <div className={styles.overlay}>
       <div className={styles.modal}>
@@ -54,7 +57,7 @@ function Modal({
           profileImg={profileImg}
           name={name}
           badge={badge}
-          createAt={createAt}
+          createAt={datePart}
         />
         <ModalContent message={message} />
         <ModalFooter onClose={onClose} />
