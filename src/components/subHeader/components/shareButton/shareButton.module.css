@@ -1,10 +1,12 @@
 .addButton {
   display: flex;
-  padding: 8px 12px;
+  width: 88px;
+  height: 36px;
   border: 1px solid var(--gray-300);
   border-radius: 6px;
   background-color: var(--white);
   gap: 4px;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
 }
