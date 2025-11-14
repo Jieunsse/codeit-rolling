@@ -9,20 +9,13 @@ import arrowDown from '@components/assets/arrow_down.svg';
 
 const EmojiPickerLazy = lazy(() => import('emoji-picker-react'));
 
-export default function SubHeader({
-  title,
+export default function SubHeader({ title, emojiPicker, arrowPopover }) {
+  const { isOpen, onAddEmoji, onEmojiSelect, pickerRef, buttonRef } =
+    emojiPicker;
 
-  isOpen,
-  onAddEmoji,
-  onEmojiSelect,
-  pickerRef,
-  buttonRef,
+  const { isArrowOpen, onToggleArrowPopover, arrowPopoverRef, arrowButtonRef } =
+    arrowPopover;
 
-  isArrowOpen,
-  onToggleArrowPopover,
-  arrowPopoverRef,
-  arrowButtonRef,
-}) {
   return (
     <section className={styles.subHeader}>
       <h2 className={styles.title}>To. {title}</h2>
@@ -32,13 +25,13 @@ export default function SubHeader({
         <span className={styles.count}>n명이 작성했어요!</span>
         <BadgeWrapper />
 
+        {/* 🔽 ArrowDown */}
         <div className={styles.arrowDownWrapper}>
           <ShareButton
             icon={arrowDown}
             onClick={onToggleArrowPopover}
             ref={arrowButtonRef}
           />
-
           <div
             ref={arrowPopoverRef}
             className={styles.arrowPopover}
@@ -50,9 +43,9 @@ export default function SubHeader({
           </div>
         </div>
 
+        {/* 😀 Emoji Picker */}
         <div className={styles.addButtonWrapper}>
           <ShareButton icon={add_24} onClick={onAddEmoji} ref={buttonRef} />
-
           <div
             ref={pickerRef}
             className={styles.pickerWrapper}
