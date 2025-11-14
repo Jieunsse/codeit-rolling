@@ -15,6 +15,7 @@ export default function SubHeader({
   emojiPicker,
   arrowPopover,
   sharePopover,
+  onClick,
 }) {
   const { isOpen, onAddEmoji, onEmojiSelect, pickerRef, buttonRef } =
     emojiPicker;
@@ -44,7 +45,7 @@ export default function SubHeader({
 
           <div
             ref={arrowPopoverRef}
-            className={`${styles.popover} ${styles.arrowPopover} ${
+            className={`${styles.popover} ${
               isArrowOpen ? styles.visible : styles.hidden
             }`}
           >
@@ -86,8 +87,12 @@ export default function SubHeader({
               isShareOpen ? styles.visible : styles.hidden
             }`}
           >
-            <div className={styles.popoverItem}>카카오톡 공유</div>
-            <div className={styles.popoverItem}>URL 공유</div>
+            <button className={styles.popoverItem} onClick={onClick}>
+              카카오톡 공유
+            </button>
+            <button className={styles.popoverItem} onClick={onClick}>
+              URL 공유
+            </button>
           </div>
         </div>
       </div>
