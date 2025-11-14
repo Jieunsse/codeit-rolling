@@ -11,7 +11,6 @@ export function useEmojiPicker(onSelectEmoji) {
 =======
   const pickerRef = useRef(null);
 
-  const openPicker = () => setIsOpen(true);
   const closePicker = () => setIsOpen(false);
 
 >>>>>>> 392d9da (Feat : 이모지 피커 로직 추가 #88)
