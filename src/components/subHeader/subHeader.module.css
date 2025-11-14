@@ -73,8 +73,15 @@
 
 .popoverItem {
   padding: 8px 12px;
+  border: none;
+  background: none;
   cursor: pointer;
-  transition: background 0.2s;
+}
+
+.popoverItem:hover {
+  width: 100%;
+  text-align: left;
+  background: var(--gray-200);
 }
 
 .visible {
