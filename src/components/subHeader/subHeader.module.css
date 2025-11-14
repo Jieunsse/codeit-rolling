@@ -21,7 +21,6 @@
   flex-direction: row;
 }
 
-
 .profileImage {
   width: 36px;
   height: 36px;
@@ -50,15 +49,16 @@
   position: relative;
 }
 
-.arrowDownWrapper {
+.arrowDownWrapper,
+.shareWrapper {
   display: flex;
   position: relative;
   margin-right: 8px;
   align-items: center;
 }
 
-
-.arrowPopover {
+/* ⭐⭐⭐ 공통 Popover 스타일 */
+.popover {
   position: absolute;
   top: 110%;
   right: 0;
@@ -71,7 +71,7 @@
   box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
 }
 
-.arrowPopover > div {
+.popoverItem {
   padding: 8px 12px;
   cursor: pointer;
   transition: background 0.2s;
@@ -84,3 +84,5 @@
 .hidden {
   display: none;
 }
+
+

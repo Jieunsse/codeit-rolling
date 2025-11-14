@@ -10,12 +10,20 @@ import PopoverMenu from '@components/subHeader/components/popoverMenu/PopoverMen
 
 const EmojiPickerLazy = lazy(() => import('emoji-picker-react'));
 
-export default function SubHeader({ title, emojiPicker, arrowPopover }) {
+export default function SubHeader({
+  title,
+  emojiPicker,
+  arrowPopover,
+  sharePopover,
+}) {
   const { isOpen, onAddEmoji, onEmojiSelect, pickerRef, buttonRef } =
     emojiPicker;
 
   const { isArrowOpen, onToggleArrowPopover, arrowPopoverRef, arrowButtonRef } =
     arrowPopover;
+
+  const { isShareOpen, onToggleSharePopover, sharePopoverRef, shareButtonRef } =
+    sharePopover;
 
   return (
     <section className={styles.subHeader}>
@@ -24,6 +32,7 @@ export default function SubHeader({ title, emojiPicker, arrowPopover }) {
       <div className={styles.rightArea}>
         <div className={styles.profileImage}>프로필</div>
         <span className={styles.count}>n명이 작성했어요!</span>
+
         <BadgeWrapper />
 
         <div className={styles.arrowDownWrapper}>
@@ -32,27 +41,26 @@ export default function SubHeader({ title, emojiPicker, arrowPopover }) {
             onClick={onToggleArrowPopover}
             ref={arrowButtonRef}
           />
+
           <div
             ref={arrowPopoverRef}
-            className={`${styles.arrowPopover} ${
+            className={`${styles.popover} ${styles.arrowPopover} ${
               isArrowOpen ? styles.visible : styles.hidden
             }`}
           >
             <PopoverMenu
               items={[
-                { label: <BadgeWrapper />, value: 'badges' },
-                { label: <BadgeWrapper />, value: 'badges' },
-                { label: <BadgeWrapper />, value: 'badges' },
+                { label: <BadgeWrapper />, value: 'badge1' },
+                { label: <BadgeWrapper />, value: 'badge2' },
               ]}
-              onSelect={item => {
-                console.log('선택한 옵션:', item);
-              }}
+              onSelect={item => console.log('선택한 옵션:', item)}
             />
           </div>
         </div>
 
         <div className={styles.addButtonWrapper}>
           <ShareButton icon={add_24} onClick={onAddEmoji} ref={buttonRef} />
+
           <div
             ref={pickerRef}
             className={`${styles.pickerWrapper} ${
@@ -65,7 +73,23 @@ export default function SubHeader({ title, emojiPicker, arrowPopover }) {
           </div>
         </div>
 
-        <ShareButton icon={shareButton} />
+        <div className={styles.shareWrapper}>
+          <ShareButton
+            icon={shareButton}
+            onClick={onToggleSharePopover}
+            ref={shareButtonRef}
+          />
+
+          <div
+            ref={sharePopoverRef}
+            className={`${styles.popover} ${
+              isShareOpen ? styles.visible : styles.hidden
+            }`}
+          >
+            <div className={styles.popoverItem}>카카오톡 공유</div>
+            <div className={styles.popoverItem}>URL 공유</div>
+          </div>
+        </div>
       </div>
     </section>
   );
