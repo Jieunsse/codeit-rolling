@@ -1,9 +1,9 @@
 import { forwardRef } from 'react';
-import styles from './shareButton.module.css';
+import styles from './iconButton.module.css';
 import add_24 from '@components/assets/add-24.svg';
 import arrowDown from '@components/assets/arrow_down.svg';
 
-const ShareButton = forwardRef(function ShareButton({ icon, onClick }, ref) {
+const IconButton = forwardRef(function ShareButton({ icon, onClick }, ref) {
   const isAddIcon = icon === add_24;
   const isArrowDown = icon === arrowDown;
   const showLabel = isAddIcon;
@@ -24,4 +24,4 @@ const ShareButton = forwardRef(function ShareButton({ icon, onClick }, ref) {
   );
 });
 
-export default ShareButton;
+export default IconButton;

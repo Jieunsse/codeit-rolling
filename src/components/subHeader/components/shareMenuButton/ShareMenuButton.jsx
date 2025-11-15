@@ -1,8 +1,8 @@
-import styles from './sharePopover.module.css';
-import ShareButton from '../shareButton/ShareButton.jsx';
+import styles from './shareMenuButton.module.css';
+import IconButton from '@components/subHeader/components/iconButton/IconButton.jsx';
 import shareIcon from '@components/assets/shareButton.svg';
 
-export default function ShareOptionsPopover({
+export default function ShareMenuButton({
   isOpen,
   popoverRef,
   buttonRef,
@@ -11,7 +11,7 @@ export default function ShareOptionsPopover({
 }) {
   return (
     <div className={styles.shareWrapper}>
-      <ShareButton icon={shareIcon} onClick={onToggle} ref={buttonRef} />
+      <IconButton icon={shareIcon} onClick={onToggle} ref={buttonRef} />
 
       <div
         ref={popoverRef}
