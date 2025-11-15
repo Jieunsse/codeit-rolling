@@ -1,7 +1,7 @@
 import styles from './top8Emojis.module.css';
 import ReactionBadge from '@components/common/badge/reactionBadge/ReactionBadge.jsx';
 import arrowDown from '@components/assets/arrow_down.svg';
-import ShareButton from '@components/subHeader/components/shareButton/ShareButton.jsx';
+import IconButton from '@components/subHeader/components/iconButton/IconButton.jsx';
 
 export default function Top8Emojis({
   isOpen,
@@ -12,7 +12,7 @@ export default function Top8Emojis({
 }) {
   return (
     <div className={styles.wrapper}>
-      <ShareButton icon={arrowDown} onClick={onToggle} ref={buttonRef} />
+      <IconButton icon={arrowDown} onClick={onToggle} ref={buttonRef} />
 
       <div
         ref={popoverRef}

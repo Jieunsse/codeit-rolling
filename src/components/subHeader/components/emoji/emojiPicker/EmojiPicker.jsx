@@ -3,7 +3,7 @@ import styles from './emojiPicker.module.css';
 
 import EmojiPickerSkeleton from '../emojiPickerSkeleton/EmojiPickerSkeleton.jsx';
 import addIcon from '@components/assets/add-24.svg';
-import ShareButton from '@components/subHeader/components/shareButton/ShareButton.jsx';
+import IconButton from '@components/subHeader/components/iconButton/IconButton.jsx';
 
 const EmojiPickerLazy = React.lazy(() => import('emoji-picker-react'));
 
@@ -16,7 +16,7 @@ export default function EmojiPicker({
 }) {
   return (
     <div className={styles.wrapper}>
-      <ShareButton icon={addIcon} onClick={onToggle} ref={buttonRef} />
+      <IconButton icon={addIcon} onClick={onToggle} ref={buttonRef} />
 
       <div
         ref={pickerRef}
