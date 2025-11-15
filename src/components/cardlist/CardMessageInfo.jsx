@@ -36,7 +36,7 @@ function CardMessageInfo({ name, profileImages, messageCount, isImage }) {
       <div className={styles.profileWrapper}>
         {profileImages.map((profileImage, idx) => (
           <ProfileImage
-            imageUrl={null}
+            imageUrl={profileImage}
             key={idx}
             alt={`profile-${idx}`}
             className={styles.profileImage}
