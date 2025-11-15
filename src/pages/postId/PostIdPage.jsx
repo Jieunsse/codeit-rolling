@@ -1,26 +1,28 @@
 import AddCard from "@/components/card/AddCard";
 import Card from "@/components/card/Card";
 import Header from "@/components/common/header/Header";
+import SubHeader from "@/components/subHeader/SubHeader";
 import Toast from "@/components/toast/Toast";
 import Modal from "@/components/modal/Modal";
 import styles from "@/pages/postId/PostIdPage.module.css";
 import { Link, useParams } from "react-router-dom";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { getMappedColor } from "@/pages/postId/type/colorMap";
-import { getRecipient, getMessages } from '@/shared/api/recipientApi';
+import { getRecipient, getMessages, createReaction, getReactions } from '@/shared/api/recipientApi';
 
 
 function PostIdPage() {
-  // URL에서 recipientId 가져오기
   const params = useParams();
   const recipientId = params.recipientId;
 
   const [recipientData, setRecipientData] = useState(null);
   const [messages, setMessages] = useState([]);
 
-  // 모달 상태, 클릭된 카드 데이터 상태
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
+
+  const [reactions, setReactions] = useState([]); 
+  const [refreshReactions, setRefreshReactions] = useState(0);
 
   const handleCardClcik = (cardData) => {
     setSelectedCard(cardData);
@@ -31,31 +33,71 @@ function PostIdPage() {
     setIsModalOpen(false);
     setSelectedCard(null);
   };
+
+  const handleEmojiSelect = useCallback(async (emojiData) => {
+    
+    try {
+      const selectedEmoji = emojiData; 
+      
+      if (!selectedEmoji || typeof selectedEmoji !== 'string') {
+        console.error("이모지 문자열이 유효하지 않습니다.");
+        return; 
+      }
+
+      const newReaction = await createReaction(recipientId, selectedEmoji);
+      
+      console.log("리액션 성공:", newReaction);
+      
+      setRefreshReactions(prev => prev + 1); 
+      
+    } catch (error) {
+      console.error("이모지 추가 오류:", error);
+    } 
+  }, [recipientId]); 
+  
+  const handleShare = useCallback((type) => {
+      console.log("Share Type:", type);
+  }, []);
+
   
   useEffect(() => {
     if (!recipientId) return; 
 
     const fetchData = async () => {
       try {
-        const recipient = await getRecipient(recipientId);
-        const messagesResult = await getMessages(recipientId);
+        const [recipient, messagesResult, reactionsResult] = await Promise.all([
+          getRecipient(recipientId),
+          getMessages(recipientId),
+          getReactions(recipientId), 
+        ]);
 
         setRecipientData(recipient);
         setMessages(messagesResult);
+        setReactions(reactionsResult);
 
       } catch (error) {
         console.error("데이터 로드 실패:", error);
         setRecipientData(null);
         setMessages([]);
+        setReactions([]);
       } 
     };
 
     fetchData();
-  }, [recipientId]);
+  }, [recipientId, refreshReactions]);
 
   if (!recipientData) {
     return null;
   }
+
+  const subHeaderData = {
+    writerCount: recipientData.messageCount || 0,
+    emojiRanking: reactions.map(r => ({ emoji: r.emoji, count: r.count })), 
+    profileCount: recipientData.messageCount || 0,
+    profileImages: recipientData.recentMessages 
+                   ? recipientData.recentMessages.slice(0, 3).map(m => m.profileImageURL) 
+                   : [],
+  };
 
   const recipientName = recipientData.name;
 
@@ -75,11 +117,12 @@ function PostIdPage() {
       <div className={styles.headerWrap}>
         <div className={styles.container}>
           <Header />
-          {/* <HeaderService 
-              recipientName={recipientName}
-              messageCount={recipientData.messageCount}
-            /> */}
-          <h1>To. {recipientName}</h1>
+          <SubHeader 
+            title={recipientName}
+            data={subHeaderData}
+            onSelectEmoji={handleEmojiSelect}
+            onShare={handleShare}
+          />
         </div>
       </div>
 
@@ -102,7 +145,6 @@ function PostIdPage() {
           ))}
         </div>
         <div className={styles.toast}>
-          {/* 토스트 조건부 렌더링 */}
           <Toast />  
         </div>
         { isModalOpen && selectedCard && (
