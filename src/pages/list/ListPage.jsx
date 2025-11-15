@@ -5,7 +5,7 @@ import Header from '@components/common/header/Header.jsx';
 import CardListWrapper from '@pages/list/components/wrapper/CardListWrapper.jsx';
 import Button from '@components/common/button/base/Button.jsx';
 import styles from './ListPage.module.css';
-import Input from '@components/common/input/Input.jsx';
+import ListInput from '@pages/list/components/input/ListInput.jsx';
 
 export default function ListPage() {
   const { cards, loading, error } = useRecipients();
@@ -38,27 +38,21 @@ export default function ListPage() {
     <>
       <Header />
       <div className={styles.pageWrapper}>
-        <section className={styles.inputBox}>
-          <div className={styles.inputWrapper}>
-            <Input
-              type="text"
-              placeholder="이름으로 검색..."
-              value={searchTerm}
-              onChange={handleChange}
-              onKeyDown={handleKeyDown}
-            />
-            <button onClick={handleSearch} className={styles.searchButton}>
-              검색
-            </button>
-          </div>
-        </section>
+        <ListInput
+          searchTerm={searchTerm}
+          onSearch={handleSearch}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
+        />
 
         <div className={styles.box}>
           <section className={styles.section}>
             <h2 className={styles.categoryTitle}>인기 롤링 페이퍼 🔥</h2>
             <CardListWrapper cards={popularCards} />
 
-            <h2 className={styles.categoryTitle}>최근에 만든 롤링 페이퍼 🌟</h2>
+            <h2 className={styles.categorySubTitle}>
+              최근에 만든 롤링 페이퍼 🌟
+            </h2>
             <CardListWrapper cards={recentCards} />
           </section>
         </div>
