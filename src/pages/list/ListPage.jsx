@@ -21,8 +21,7 @@ export default function ListPage() {
 
   const handleClick = () => navigate('/post');
 
-  // ✅ 렌더링만 조건 처리
-  if (loading) return <div>로딩 중…</div>;
+  if (loading) return <div></div>;
   if (error) return <div>데이터 불러오기 실패</div>;
 
   const popularCards = [...displayedCards].sort((a, b) => {
@@ -38,33 +37,35 @@ export default function ListPage() {
   return (
     <>
       <Header />
-      <section className={styles.inputBox}>
-        <div className={styles.inputWrapper}>
-          <Input
-            type="text"
-            placeholder="이름으로 검색..."
-            value={searchTerm}
-            onChange={handleChange}
-            onKeyDown={handleKeyDown}
-          />
-          <button onClick={handleSearch} className={styles.searchButton}>
-            검색
-          </button>
-        </div>
-      </section>
-
-      <div className={styles.box}>
-        <section className={styles.section}>
-          <h2 className={styles.categoryTitle}>인기 롤링 페이퍼 🔥</h2>
-          <CardListWrapper cards={popularCards} />
-
-          <h2 className={styles.categoryTitle}>최근에 만든 롤링 페이퍼 🌟</h2>
-          <CardListWrapper cards={recentCards} />
+      <div className={styles.pageWrapper}>
+        <section className={styles.inputBox}>
+          <div className={styles.inputWrapper}>
+            <Input
+              type="text"
+              placeholder="이름으로 검색..."
+              value={searchTerm}
+              onChange={handleChange}
+              onKeyDown={handleKeyDown}
+            />
+            <button onClick={handleSearch} className={styles.searchButton}>
+              검색
+            </button>
+          </div>
         </section>
-      </div>
 
-      <div className={styles.box}>
-        <Button title="나도 만들어보기" onClick={handleClick} />
+        <div className={styles.box}>
+          <section className={styles.section}>
+            <h2 className={styles.categoryTitle}>인기 롤링 페이퍼 🔥</h2>
+            <CardListWrapper cards={popularCards} />
+
+            <h2 className={styles.categoryTitle}>최근에 만든 롤링 페이퍼 🌟</h2>
+            <CardListWrapper cards={recentCards} />
+          </section>
+        </div>
+
+        <div className={styles.box}>
+          <Button title="나도 만들어보기" onClick={handleClick} />
+        </div>
       </div>
     </>
   );
