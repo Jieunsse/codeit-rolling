@@ -1,0 +1,28 @@
+.addButton {
+  display: flex;
+  width: 88px;
+  height: 36px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+  background-color: var(--white);
+  gap: 4px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconOnly {
+  width: 56px;
+  height: 36px;
+  padding: 0;
+}
+
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.label {
+  font-size: 14px;
+}
