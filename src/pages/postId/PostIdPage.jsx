@@ -144,9 +144,6 @@ function PostIdPage() {
             />
           ))}
         </div>
-        <div className={styles.toast}>
-          <Toast />  
-        </div>
         { isModalOpen && selectedCard && (
           <Modal 
             isOpen={isModalOpen}
