@@ -5,7 +5,7 @@ import arrowDown from '@components/assets/arrow_down.svg';
 
 const ShareButton = forwardRef(function ShareButton({ icon, onClick }, ref) {
   const isAddIcon = icon === add_24;
-  const isArrowDown = icon === arrowDown; // ⭐ arrowDown 체크
+  const isArrowDown = icon === arrowDown;
   const showLabel = isAddIcon;
 
   return (
