@@ -1,4 +1,3 @@
-/* wrapper는 relative로 세팅 */
 .wrapper {
   display: flex;
   position: relative;
@@ -6,15 +5,18 @@
   align-items: center;
 }
 
-/* 카드 리스트는 가운데만 차지 */
-.cardContainer {
-  display: flex;
-  width: 100%;
-  gap: 24px;   /* 카드 간격 */
+.sliderWindow {
+  width: max-content;
   overflow: hidden;
 }
 
-/* 좌우 화살표는 카드 영역 위에 겹쳐서 배치 */
+.cardContainer {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
 .leftArrow,
 .rightArrow {
   position: absolute;
@@ -27,9 +29,10 @@
 }
 
 .leftArrow {
-  left: -36px;
+  left: -40px;
 }
 
+/* 오른쪽 버튼을 캐러셀 영역 밖에 */
 .rightArrow {
-  right: -36px;
+  right: -40px;
 }

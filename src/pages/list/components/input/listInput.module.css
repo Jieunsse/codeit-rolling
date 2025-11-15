@@ -1,0 +1,21 @@
+.inputBox {
+  display: flex;
+  margin-top: 60px;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputWrapper {
+  display: flex;
+  gap: 6px;
+}
+
+.searchButton {
+  width: 80px;
+  height: 50px;
+  border: none;
+  border-radius: 6px;
+  color: var(--white);
+  background-color: var(--purple-600);
+  cursor: pointer;
+}
