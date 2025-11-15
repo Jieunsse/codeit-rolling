@@ -5,15 +5,16 @@ import SubHeader from "@/components/subHeader/SubHeader";
 import Toast from "@/components/toast/Toast";
 import Modal from "@/components/modal/Modal";
 import styles from "@/pages/postId/PostIdPage.module.css";
-import { Link, useParams } from "react-router-dom";
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect, useCallback } from 'react';
 import { getMappedColor } from "@/pages/postId/type/colorMap";
-import { getRecipient, getMessages, createReaction, getReactions } from '@/shared/api/recipientApi';
+import { getRecipient, getMessages, createReaction, getReactions, deleteMessage, deleteRecipient } from '@/shared/api/recipientApi';
 
 
 function PostIdPage() {
   const params = useParams();
   const recipientId = params.recipientId;
+  const navigate = useNavigate();
 
   const [recipientData, setRecipientData] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -59,6 +60,44 @@ function PostIdPage() {
       console.log("Share Type:", type);
   }, []);
 
+  const handleDeleteMessage = async (messageId) => {
+    if (window.confirm("메시지를 삭제하시겠습니까?")) {
+      try {
+        await deleteMessage(messageId);
+        setMessages(messages.filter(msg => msg.id !== messageId));
+      } catch (error) {
+        console.error("메시지 삭제 실패:", error);
+      }
+    }
+  };
+
+  const handleDeleteRecipient = async () => {
+    const recipientName = recipientData.name; 
+    const myName = localStorage.getItem('my_name');
+
+    if (myName !== recipientName) {
+      alert("이 롤링페이퍼를 삭제할 권한이 없습니다.");
+      return;
+    }
+    const inputId = window.prompt("⚠️ 이 롤링페이퍼를 삭제합니다.\n계속하려면 비밀번호를 입력해주세요.");
+    if (inputId === null || inputId.trim() === "") {
+      alert("입력이 취소되었습니다.");
+      return;
+    }
+    if (String(inputId) !== String(recipientId)) {
+      alert("고유 ID가 일치하지 않습니다.");
+      return;
+    }
+    if (window.confirm("롤링페이퍼를 삭제하시겠습니까?")) {
+      try {
+          await deleteRecipient(recipientId); 
+          navigate('/list'); 
+      } catch (error) {
+          console.error("롤링 페이퍼 삭제 실패:", error);
+          alert("롤링 페이퍼 삭제에 실패했습니다.");
+      }
+    }
+  };
   
   useEffect(() => {
     if (!recipientId) return; 
@@ -100,6 +139,8 @@ function PostIdPage() {
   };
 
   const recipientName = recipientData.name;
+  const myName = localStorage.getItem('my_name');
+  const canDeleteRecipient = myName === recipientName;
 
   const apiColorKey = recipientData.backgroundColor;
   const mappedColor = getMappedColor(apiColorKey);
@@ -110,6 +151,8 @@ function PostIdPage() {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   };
+
+  
 
 
   return(
@@ -131,7 +174,9 @@ function PostIdPage() {
           <Link to='/list'>
             <button className={styles.backBtn}>← 뒤로가기</button>
           </Link>
-          <button className={styles.deleteBtn}>삭제하기</button>
+          {canDeleteRecipient && (
+            <button className={styles.deleteBtn} onClick={handleDeleteRecipient}>삭제하기</button>
+          )}
         </div>
         <div className={styles.main}>
           <AddCard recipientId={recipientId} />
@@ -141,6 +186,7 @@ function PostIdPage() {
               key={cardData.id} 
               data={cardData}  
               onClick={() => handleCardClcik(cardData)}
+              onDelete={handleDeleteMessage}
             />
           ))}
         </div>

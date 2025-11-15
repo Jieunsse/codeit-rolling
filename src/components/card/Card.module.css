@@ -62,9 +62,9 @@
   z-index: 1000;
 }
 
-/* .container:hover .deleteBtn {
+.container:hover .deleteBtn {
   opacity: 1;
-} */
+}
 
 .content {
   width: 336px;

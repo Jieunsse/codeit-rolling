@@ -61,3 +61,23 @@ export async function getReactions(recipientId, limit = 8) {
   const data = await response.json();
   return data.results; // results 배열만 반환
 }
+
+export async function deleteMessage(messageId) {
+  const response = await fetch(`${BASE_URL}/messages/${messageId}/`, {
+    method: 'DELETE',
+  });
+
+  if (response.status !== 204) {
+    throw new Error(`메시지 삭제 실패: ${response.status}`);
+  }
+}
+
+export async function deleteRecipient(recipientId) {
+  const response = await fetch(`${BASE_URL}/recipients/${recipientId}/`, {
+    method: 'DELETE',
+  });
+
+  if (response.status !== 204) {
+    throw new Error(`롤링 페이퍼 삭제 실패: ${response.status}`);
+  }
+}
