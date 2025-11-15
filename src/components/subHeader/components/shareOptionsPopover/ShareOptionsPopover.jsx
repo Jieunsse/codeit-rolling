@@ -1,4 +1,3 @@
-// components/sharePopover/ShareOptionsPopover.jsx
 import styles from './sharePopover.module.css';
 import ShareButton from '../shareButton/ShareButton.jsx';
 import shareIcon from '@components/assets/shareButton.svg';

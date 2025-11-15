@@ -5,8 +5,9 @@ import { useShare } from './hooks/useShare.js';
 import { useTopEmojis } from './hooks/useTopEmojis.js';
 import ShareOptionsPopover from '@components/subHeader/components/shareOptionsPopover/ShareOptionsPopover.jsx';
 import EmojiPickerPopover from '@components/subHeader/components/emoji/emojiPicker/EmojiPicker.jsx';
-import EmojiListPopover from '@components/subHeader/components/emoji/emojiListPopover/EmojiListPopover.jsx';
-import EmojiWrapper from '@components/subHeader/components/emoji/emojiWrapper/EmojiWrapper.jsx';
+import Top8Emojis from '@components/subHeader/components/emoji/top8Emojis/Top8Emojis.jsx';
+import Top3Emojis from '@components/subHeader/components/emoji/top3Emojis/Top3Emojis.jsx';
+import EmojiPicker from '@components/subHeader/components/emoji/emojiPicker/EmojiPicker.jsx';
 
 export default function SubHeader({
   title,
@@ -42,16 +43,17 @@ export default function SubHeader({
         <span className={styles.rightArea}>
           <div className={styles.profileImage} />
           <span className={styles.count}>n명이 작성했어요!</span>
-          <EmojiWrapper topEmojis={topEmojis} />
+          <Top3Emojis topEmojis={topEmojis} />
 
-          <EmojiListPopover
+          <Top8Emojis
             isOpen={isArrowOpen}
             popoverRef={arrowPopoverRef}
             buttonRef={arrowButtonRef}
             onToggle={onToggleArrowPopover}
             topEmojis={topEmojis}
           />
-          <EmojiPickerPopover
+
+          <EmojiPicker
             isOpen={isOpen}
             pickerRef={pickerRef}
             buttonRef={emojiButtonRef}
