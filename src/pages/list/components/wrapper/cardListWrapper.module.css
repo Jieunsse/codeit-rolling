@@ -5,11 +5,15 @@
   align-items: center;
 }
 
+.sliderWindow {
+  width: max-content;
+  overflow: hidden;
+}
+
 .cardContainer {
   display: flex;
-  width: 100%;
   gap: 24px;
-  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
 }
 
 .leftArrow,
@@ -24,9 +28,9 @@
 }
 
 .leftArrow {
-  left: -36px;
+  left: 0;
 }
 
 .rightArrow {
-  right: -36px;
+  right: 0;
 }
