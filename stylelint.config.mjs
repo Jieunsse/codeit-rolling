@@ -66,5 +66,6 @@ export default {
     'color-hex-length': 'long',
     'declaration-block-no-duplicate-properties': true,
     'color-no-invalid-hex': true,
+    'keyframes-name-pattern': null,
   },
 };
