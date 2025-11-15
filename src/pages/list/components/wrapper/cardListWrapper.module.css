@@ -16,6 +16,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
+
 .leftArrow,
 .rightArrow {
   position: absolute;
@@ -28,9 +29,10 @@
 }
 
 .leftArrow {
-  left: 0;
+  left: -40px;
 }
 
+/* 오른쪽 버튼을 캐러셀 영역 밖에 */
 .rightArrow {
-  right: 0;
+  right: -40px;
 }
