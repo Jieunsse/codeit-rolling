@@ -52,10 +52,6 @@
   display: flex;
   overflow: hidden;
   align-items: center;
-}
-
-/* 토글 버튼 */
-.toggleWrapper {
   margin: 24px 0 45px 0;
 }
 .toggleWrapper button {
@@ -93,6 +89,14 @@
 }
 .indicator.right {
   left: 120px;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.changeButton {
+  margin-top: 24px;
 }
 
 .optionBox {

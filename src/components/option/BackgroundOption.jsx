@@ -28,7 +28,8 @@ function BackgroundOption({
       className={cardClass}
       style={{
         background: mode === 'image' ? `url(${background})` : background,
-        backgroundSize: 'cover',
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
       }}
       onClick={onClick}
