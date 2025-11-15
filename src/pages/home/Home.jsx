@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   return (
     <div>
-      <Header />
+      <Header isButton />
       <section>
         <span className={styles.imgContainer}>
           <img src={homeBanner01} alt="배너01" className={styles.banner} />

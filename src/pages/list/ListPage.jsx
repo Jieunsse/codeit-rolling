@@ -36,7 +36,7 @@ export default function ListPage() {
 
   return (
     <>
-      <Header />
+      <Header isButton />
       <div className={styles.pageWrapper}>
         <ListInput
           searchTerm={searchTerm}
