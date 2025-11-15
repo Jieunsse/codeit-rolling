@@ -1,4 +1,3 @@
-// src/components/subHeader/hooks/useSubHeader.js
 import { useEmojiPicker } from './useEmojiPicker.js';
 import { usePopover } from './usePopover.js';
 
