@@ -1,9 +1,9 @@
-import styles from './emojiListPopover.module.css';
+import styles from './top8Emojis.module.css';
 import ReactionBadge from '@components/common/badge/reactionBadge/ReactionBadge.jsx';
 import arrowDown from '@components/assets/arrow_down.svg';
 import ShareButton from '@components/subHeader/components/shareButton/ShareButton.jsx';
 
-export default function EmojiListPopover({
+export default function Top8Emojis({
   isOpen,
   popoverRef,
   buttonRef,

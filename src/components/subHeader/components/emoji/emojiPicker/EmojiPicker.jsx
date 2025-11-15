@@ -7,7 +7,7 @@ import ShareButton from '@components/subHeader/components/shareButton/ShareButto
 
 const EmojiPickerLazy = React.lazy(() => import('emoji-picker-react'));
 
-export default function EmojiPickerPopover({
+export default function EmojiPicker({
   isOpen,
   pickerRef,
   buttonRef,
