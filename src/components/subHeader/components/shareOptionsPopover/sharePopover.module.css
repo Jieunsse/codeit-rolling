@@ -1,0 +1,50 @@
+/* 공유 팝오버 전체 래퍼 (버튼 + 팝오버) */
+.shareWrapper {
+  display: inline-block;
+  position: relative;
+}
+
+/* 팝오버 UI 박스 */
+.sharePopover {
+  display: flex;
+  position: absolute;
+  top: 48px; /* 버튼 아래로 */
+  right: 0;
+  z-index: 20;
+  min-width: 120px;
+  padding: 6px 0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
+  flex-direction: column;
+}
+
+/* 팝오버 내부 아이템 버튼 */
+.popoverItem {
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  font-size: 14px;
+  text-align: left;
+  color: #333333;
+  background: transparent;
+  cursor: pointer;
+}
+
+.popoverItem:hover {
+  background-color: #f5f5f5;
+}
+
+/* 표시 / 비표시 상태 */
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+}
