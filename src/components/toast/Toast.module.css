@@ -1,22 +1,47 @@
 .container {
-  box-sizing: border-box;
   display: flex;
-  align-items: center;
-  gap: 12px;
-
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  z-index: 9999;
   width: 524px;
   height: 64px;
-  border-radius: 8px;
   padding: 19px 30px;
-  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  background-color: rgb(0 0 0 / 80%);
+  gap: 12px;
+  align-items: center;
+  animation: fade-in-out 3s ease forwards;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateX(-50%);
+}
 
-  z-index: 1000;
+@keyframes fade-in-out {
+  0% {
+    bottom: 40px;
+    opacity: 0;
+  }
+
+  15% {
+    bottom: 50px;
+    opacity: 1;
+  }
+
+  70% {
+    bottom: 50px;
+    opacity: 1;
+  }
+
+  100% {
+    bottom: 40px;
+    opacity: 0;
+  }
 }
 
 .container p {
-  color: var(--white);
   font-size: 16px;
-  flex-grow: 1;
-  font-family: Pretendard;
   font-weight: 400;
+  color: var(--white);
+  flex-grow: 1;
 }
