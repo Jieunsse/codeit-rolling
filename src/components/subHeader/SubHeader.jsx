@@ -3,18 +3,14 @@ import Toast from '@components/toast/Toast.jsx';
 import { useSubHeader } from './hooks/useSubHeader.js';
 import { useShare } from './hooks/useShare.js';
 import { useTopEmojis } from './hooks/useTopEmojis.js';
-import ShareOptionsPopover from '@components/subHeader/components/shareOptionsPopover/ShareOptionsPopover.jsx';
-import EmojiPickerPopover from '@components/subHeader/components/emoji/emojiPicker/EmojiPicker.jsx';
+import ShareMenuButton from '@components/subHeader/components/shareMenuButton/ShareMenuButton.jsx';
 import Top8Emojis from '@components/subHeader/components/emoji/top8Emojis/Top8Emojis.jsx';
 import Top3Emojis from '@components/subHeader/components/emoji/top3Emojis/Top3Emojis.jsx';
 import EmojiPicker from '@components/subHeader/components/emoji/emojiPicker/EmojiPicker.jsx';
+import WriterCounter from '@components/subHeader/components/writerCounter/WriterCounter.jsx';
+import Profile from '@components/subHeader/components/profile/Profile.jsx';
 
-export default function SubHeader({
-  title,
-  emojiRanking = [],
-  onSelectEmoji,
-  onShare,
-}) {
+export default function SubHeader({ title, data, onSelectEmoji, onShare }) {
   const {
     isOpen,
     pickerRef,
@@ -33,6 +29,7 @@ export default function SubHeader({
   } = useSubHeader();
 
   const { showToast, handleShare } = useShare(onShare);
+  const { emojiRanking, writerCount, profileCount, profileImages } = data;
   const topEmojis = useTopEmojis(emojiRanking);
 
   return (
@@ -41,8 +38,8 @@ export default function SubHeader({
         <h2 className={styles.title}>To. {title}</h2>
 
         <span className={styles.rightArea}>
-          <div className={styles.profileImage} />
-          <span className={styles.count}>n명이 작성했어요!</span>
+          <Profile profileCount={profileCount} profileImages={profileImages} />
+          <WriterCounter writerCount={writerCount} />
           <Top3Emojis topEmojis={topEmojis} />
 
           <Top8Emojis
@@ -61,7 +58,7 @@ export default function SubHeader({
             onSelectEmoji={onSelectEmoji}
           />
 
-          <ShareOptionsPopover
+          <ShareMenuButton
             isOpen={isShareOpen}
             popoverRef={sharePopoverRef}
             buttonRef={shareButtonRef}
