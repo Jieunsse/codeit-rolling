@@ -42,7 +42,7 @@ function CardMessageInfo({ name, profileImages, messageCount, isImage }) {
             className={styles.profileImage}
           />
         ))}
-        <div className={styles.profileCount}>+{messageCount - 3}</div>
+        <div className={styles.profileCount}>+{messageCount}</div>
       </div>
       <div
         className={`${styles.messageCount} ${isImage ? styles.imageMode : ''}`}
