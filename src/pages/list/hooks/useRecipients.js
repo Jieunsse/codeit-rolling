@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getRecipients } from '@pages/list/apis/getRecipients.js';
-import { mapRecipientToCard } from '@pages/list/utils/mapRecipientToCard.js';
+import { recipientMapper } from '@pages/list/utils/recipientMapper.js';
 
 export function useRecipients() {
   const [cards, setCards] = useState([]);
@@ -12,7 +12,7 @@ export function useRecipients() {
       try {
         const data = await getRecipients();
 
-        const mapped = data.results.map(mapRecipientToCard);
+        const mapped = data.results.map(recipientMapper);
         setCards(mapped);
       } catch (e) {
         setError(e);
