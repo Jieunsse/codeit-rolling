@@ -6,7 +6,7 @@ import styles from './Card.module.css';
 function Card({ data, onClick }) {
   const {
     sender, 
-    profileImageUrl,
+    profileImageURL,
     relationship,
     content, 
     createdAt,
@@ -17,7 +17,7 @@ function Card({ data, onClick }) {
   return (
       <div className={styles.container} onClick={onClick}>
         <div className={styles.header}>
-          <ProfileImage imageUrl={profileImageUrl}/>
+          <ProfileImage imageUrl={profileImageURL}/>
           <div className={styles.senderInfo}>
             <p className={styles.sender}>From. <span className={styles.senderName}>{sender}</span></p>
             <RelationBadge title={relationship}/>
