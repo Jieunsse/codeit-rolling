@@ -1,6 +1,7 @@
 .imgContainer {
   display: flex;
   margin-top: 60px;
+  padding: 0 24px;
   gap: 30px;
   align-items: center;
   flex-direction: column;
@@ -11,10 +12,88 @@
   width: 1200px;
   height: 324px;
   border-radius: 16px;
+  animation: fadeUp 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.banner:nth-child(2) {
+  animation-delay: 0.4s;
 }
 
 .button {
   width: 280px;
   height: 56px;
   border-radius: 12px;
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+
+@media (width <= 1248px) {
+  header {
+    padding: 0 24px;
+  }
+
+  .navContainer {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .banner {
+    width: 100%;
+    max-width: 1200px;
+  }
+}
+
+
+@media (width <= 1247px) and (width >= 768px) {
+  .imgContainer {
+    padding: 0 5vw;
+  }
+
+  .button {
+    width: clamp(180px, 25vw, 260px);
+    height: 48px;
+  }
+}
+
+
+@media (width <= 767px) {
+  .imgContainer {
+    padding: 0 24px;
+    gap: 20px
+  }
+
+  .banner {
+    width: 100%;
+    height: auto;
+    max-height: 260px;
+  }
+
+  .navContainer {
+    gap: clamp(8px, 5vw, 24px);
+  }
+
+  .button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

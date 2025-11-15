@@ -7,6 +7,7 @@ import styles from '@/components/common/input/Input.module.css';
  * @param {boolean}  [hasError=false]      에러 표시 여부 (에러 문구와 같이 연관됨)
  * @param {boolean}  [disabled=false]      입력칸 비활성화 여부
  *
+ *
  * clsx를 사용했습니다 npm i clsx 설치 필요
  */
 
@@ -19,6 +20,7 @@ function Input({
   hasError = false,
   errorMessage = '유효한 입력이 아닙니다',
   disabled = false,
+  ...props
 }) {
   return (
     <>
@@ -30,6 +32,7 @@ function Input({
         placeholder={placeholder}
         disabled={disabled}
         className={clsx(styles.input, hasError && styles.error, className)}
+        {...props}
       />
       {hasError && <p className={styles.errorMessage}>{errorMessage}</p>}
     </>

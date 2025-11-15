@@ -18,6 +18,18 @@
   letter-spacing: -0.01em;
 }
 
+<<<<<<< HEAD
+=======
+.categorySubTitle {
+  margin-top: 50px;
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.01em;
+}
+
+>>>>>>> dev
 .box {
   display: flex;
   margin-top: 50px;
@@ -30,4 +42,46 @@
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
+<<<<<<< HEAD
 }
+=======
+}
+
+.inputBox {
+  display: flex;
+  margin-top: 60px;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputWrapper {
+  display: flex;
+  gap: 6px;
+}
+
+.searchButton {
+  width: 80px;
+  height: 50px;
+  border: none;
+  border-radius: 6px;
+  color: var(--white);
+  background-color: var(--purple-600);
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pageWrapper {
+  animation: fadeIn 0.6s ease forwards;
+}
+>>>>>>> dev
