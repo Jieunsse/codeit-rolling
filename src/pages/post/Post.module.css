@@ -1,0 +1,91 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: "Pretendard", sans-serif;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px 80px;
+  box-sizing: border-box;
+}
+
+.inner {
+  width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.profileRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profileButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.profileImg {
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+}
+
+.profileGuide {
+  font-size: 16px;
+  color: var(--gray-500);
+  font-weight: 400;
+}
+
+.profileList {
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.profileItem {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.profileItem img {
+  width: 48px;
+  height: 48px;
+  border-radius: 100px;
+}
+
+.editorPlaceholder {
+  height: 260px;
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  background-color: var(--gray-50);
+}
+
+.submitWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
