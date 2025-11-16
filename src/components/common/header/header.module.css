@@ -7,6 +7,7 @@
 }
 
 .headerContainer {
+  box-sizing: border-box;
   display: flex;
   width: 1200px;
   margin-top: 11px;
