@@ -6,6 +6,7 @@ import CardListWrapper from '@pages/list/components/wrapper/CardListWrapper.jsx'
 import Button from '@components/common/button/base/Button.jsx';
 import styles from './ListPage.module.css';
 import ListInput from '@pages/list/components/input/ListInput.jsx';
+import Counter from '@pages/list/components/counter/Counter.jsx';
 
 export default function ListPage() {
   const { cards, loading, error } = useRecipients();
@@ -38,12 +39,22 @@ export default function ListPage() {
     <>
       <Header isButton />
       <div className={styles.pageWrapper}>
-        <ListInput
-          searchTerm={searchTerm}
-          onSearch={handleSearch}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-        />
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'end',
+            gap: '24px',
+            justifyContent: 'center',
+          }}
+        >
+          <ListInput
+            searchTerm={searchTerm}
+            onSearch={handleSearch}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+          />
+          <Counter />
+        </div>
 
         <div className={styles.box}>
           <section className={styles.section}>
@@ -56,7 +67,6 @@ export default function ListPage() {
             <CardListWrapper cards={recentCards} />
           </section>
         </div>
-
         <div className={styles.box}>
           <Button title="나도 만들어보기" onClick={handleClick} />
         </div>

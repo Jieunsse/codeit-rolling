@@ -33,5 +33,6 @@ export function useRecipients() {
     fetchRecipients();
   }, []);
 
-  return { cards, loading, error };
+  const count = cards.length;
+  return { cards, count, loading, error };
 }

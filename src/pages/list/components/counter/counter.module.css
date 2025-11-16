@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  height: 50px;
+  padding-right: 20px;
+  border: 2px solid var(--purple-300);
+  border-radius: 6px;
+  color: var(--white);
+  background-color: var(--purple-200);
+  gap: 6px;
+  align-items: end;
+  justify-content: center;
+}
+
+.countUp {
+  min-width: 2ch;
+  font-size: 40px;
+  text-align: right;
+}
+
+.p {
+  font-size: 20px;
+}
