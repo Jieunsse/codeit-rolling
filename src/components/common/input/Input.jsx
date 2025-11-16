@@ -7,12 +7,14 @@ import styles from '@/components/common/input/Input.module.css';
  * @param {boolean}  [hasError=false]      에러 표시 여부 (에러 문구와 같이 연관됨)
  * @param {boolean}  [disabled=false]      입력칸 비활성화 여부
  *
+ *
  * clsx를 사용했습니다 npm i clsx 설치 필요
  */
 
 function Input({
   value,
   onChange,
+  onBlur,
   placeholder = '이름을 입력해주세요',
   className = '',
   hasError = false,
@@ -26,6 +28,7 @@ function Input({
         type="text"
         value={value}
         onChange={onChange}
+        onBlur={onBlur}
         placeholder={placeholder}
         disabled={disabled}
         className={clsx(styles.input, hasError && styles.error, className)}

@@ -34,9 +34,9 @@ export default function Button({
 
   return (
     <button
-      className={className}
-      disabled={interactionState === 'disabled'}
       {...props}
+      className={`${className} ${props.className || ''}`}
+      disabled={interactionState === 'disabled'}
     >
       {icon && <img src={icon.src} alt="icon" className={icon.className} />}
       <span>{title}</span>
