@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-/* wrapper는 relative로 세팅 */
-=======
->>>>>>> dev
 .wrapper {
   display: flex;
   position: relative;
@@ -9,17 +5,6 @@
   align-items: center;
 }
 
-<<<<<<< HEAD
-/* 카드 리스트는 가운데만 차지 */
-.cardContainer {
-  display: flex;
-  width: 100%;
-  gap: 24px;   /* 카드 간격 */
-  overflow: hidden;
-}
-
-/* 좌우 화살표는 카드 영역 위에 겹쳐서 배치 */
-=======
 .sliderWindow {
   width: max-content;
   overflow: hidden;
@@ -31,8 +16,6 @@
   transition: transform 0.3s ease-in-out;
 }
 
-
->>>>>>> dev
 .leftArrow,
 .rightArrow {
   position: absolute;
@@ -45,14 +28,6 @@
 }
 
 .leftArrow {
-<<<<<<< HEAD
-  left: -36px;
-}
-
-.rightArrow {
-  right: -36px;
-}
-=======
   left: -40px;
 }
 
@@ -60,4 +35,3 @@
 .rightArrow {
   right: -40px;
 }
->>>>>>> dev

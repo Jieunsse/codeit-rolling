@@ -20,7 +20,7 @@ function PostPage() {
 
   const colorArray = [
     { color: 'beige', value: 'var(--beige-200)' },
-    { color: 'purple', value: 'var(--purple-20)' },
+    { color: 'purple', value: 'var(--purple-200)' },
     { color: 'blue', value: 'var(--blue-200)' },
     { color: 'green', value: 'var(--green-200)' },
   ];
@@ -260,6 +260,7 @@ function PostPage() {
               variant="primary"
               visualState="enabled"
               onClick={handleSubmit}
+              className={styles.submitButton}
             ></Button>
           </div>
         </div>
