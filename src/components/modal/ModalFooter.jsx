@@ -24,7 +24,7 @@ function ModalFooter({ onClose }) {
       <div className={styles.footer}>
         <Button
           onClick={onClose}
-          buttonName="확인"
+          title="확인"
           variant="primary"
           visualState={visualState}
           onMouseEnter={() => setVisualState('hover')}
