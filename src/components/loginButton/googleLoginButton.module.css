@@ -1,0 +1,8 @@
+.googleLoginButton {
+  width: 160px;
+  height: 40px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+  background: none;
+  cursor: pointer;
+}
