@@ -3,7 +3,7 @@ import arrowRight from '@/pages/assets/arrowRight.svg';
 import styles from './arrowButton.module.css';
 
 /**
- * @param { 'left' | 'right' } direction - 화살표 방향
+ * @param { 'left' | 'right' } direction
  */
 export default function ArrowButton({ direction, ...props }) {
   return (
