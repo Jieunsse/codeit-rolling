@@ -3,6 +3,7 @@ import Header from '@/components/common/header/Header';
 import Input from '@/components/common/input/Input';
 import BackgroundOption from '@/components/option/BackgroundOption';
 import styles from '@/pages/post/PostPage.module.css';
+import updateIcon from 'src/components/assets/update.svg';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,6 +16,9 @@ function PostPage() {
   const [randomChange, setRandomChange] = useState(0);
   const [selected, setSelected] = useState(0);
   const [hasError, setHasError] = useState(false);
+  const [interactionState, setInteractionState] = useState('enabled');
+  const [interactionStateSubmit, setInteractionStateSubmit] =
+    useState('enabled');
 
   const navigate = useNavigate();
 
@@ -84,23 +88,23 @@ function PostPage() {
     },
     {
       image:
-        'https://images.unsplash.com/photo-1609683391153-16eb7b87233b?fit=crop&w=300&h=300&q=80&auto=format',
+        'https://images.pexels.com/photos/163390/baseball-ball-box-sports-163390.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
     },
     {
       image:
-        'https://images.unsplash.com/photo-1704477675523-c49a195d0cc7?fit=crop&w=300&h=300&q=80&auto=format',
+        'https://images.unsplash.com/photo-1544235653-a313b8a430d9?fit=crop&w=300&h=300&q=80&auto=format',
     },
     {
       image:
-        'https://images.unsplash.com/photo-1488477181946-6428a0291777?fit=crop&w=300&h=300&q=80&auto=format',
+        'https://images.unsplash.com/photo-1572859704906-ab0716da285f?fit=crop&w=300&h=300&q=80&auto=format',
     },
     {
       image:
-        'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?fit=crop&w=300&h=300&q=80&auto=format',
+        'https://images.unsplash.com/photo-1499195333224-3ce974eecb47?fit=crop&w=300&h=300&q=80&auto=format',
     },
     {
       image:
-        'https://images.unsplash.com/photo-1497531551184-06b252e1bee1?fit=crop&w=300&h=300&q=80&auto=format',
+        'https://images.unsplash.com/photo-1532135468830-e51699205b70?fit=crop&w=300&h=300&q=80&auto=format',
     },
     {
       image:
@@ -202,7 +206,6 @@ function PostPage() {
                 >
                   컬러
                 </button>
-
                 <button
                   onClick={() => setBackgroundType('image')}
                   className={
@@ -220,7 +223,17 @@ function PostPage() {
                   variant="outlined"
                   size={28}
                   isIcon
-                  visualState="enabled"
+                  icon={{ src: updateIcon, className: styles.updateIcon }}
+                  interactionState={interactionState}
+                  onMouseEnter={() => setInteractionState('hover')}
+                  onMouseLeave={() => setInteractionState('enabled')}
+                  onMouseDown={() => setInteractionState('pressed')}
+                  onMouseUp={() => setInteractionState('hover')}
+                  onFocus={() => setInteractionState('focus')}
+                  onBlur={() => setInteractionState('enabled')}
+                  className={`${styles.randomButton} ${
+                    backgroundType === 'color' ? styles.randomButtonHidden : ''
+                  }`}
                   onClick={() => setRandomChange(prev => prev + 1)}
                 />
               </div>
@@ -258,7 +271,13 @@ function PostPage() {
             <Button
               title="생성하기"
               variant="primary"
-              visualState="enabled"
+              interactionState={interactionStateSubmit}
+              onMouseEnter={() => setInteractionStateSubmit('hover')}
+              onMouseLeave={() => setInteractionStateSubmit('enabled')}
+              onMouseDown={() => setInteractionStateSubmit('pressed')}
+              onMouseUp={() => setInteractionStateSubmit('hover')}
+              onFocus={() => setInteractionStateSubmit('focus')}
+              onBlur={() => setInteractionStateSubmit('enabled')}
               onClick={handleSubmit}
               className={styles.submitButton}
             ></Button>

@@ -8,6 +8,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: box-shadow 0.2s ease;
 }
 
 /* 체크 이미지 중앙 배치 */
@@ -16,12 +18,41 @@
   height: 44px;
 }
 
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.imageSelected {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
 /* 이미지 모드에서 선택된 카드에만 적용 */
 .card.imageSelected::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background-color: rgba(255, 255, 255, 0.4); /* 흰색 반투명 오버레이 */
   border-radius: inherit;
   pointer-events: none;
+}
+.check {
+  animation: pop 0.25s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.tiltWrapper {
+  display: inline-block;
 }

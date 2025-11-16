@@ -110,6 +110,18 @@
 .buttonBox {
   margin: 69px 0;
 }
+.randomButton {
+  height: 38px;
+  transition: opacity 0.2s ease;
+}
+.randomButtonHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.updateIcon {
+  width: 15px;
+  height: 15px;
+}
 .submitButton {
   width: 720px;
 }
