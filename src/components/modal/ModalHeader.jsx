@@ -23,12 +23,12 @@ import styles from './ModalHeader.module.css';
  * />
  */
 
-function ModalHeader({ imageUrl, name, badge, createAt }) {
+function ModalHeader({ profileImg, name, badge, createAt }) {
   return (
     <>
       <div className={styles.header}>
         <div className={styles.userInfo}>
-          <ProfileImage imageUrl={imageUrl} />
+          <ProfileImage imageUrl={profileImg} />
           <div>
             <div className={styles.name}>
               <span className={styles.label}>From.</span>

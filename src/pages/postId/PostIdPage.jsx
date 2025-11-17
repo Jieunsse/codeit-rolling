@@ -184,7 +184,7 @@ function PostIdPage() {
           <Modal 
             isOpen={isModalOpen}
             onClose={closeModal}
-            profileImg={selectedCard.profileImgURL}
+            profileImg={selectedCard.profileImageURL}
             name={selectedCard.sender}
             badge={selectedCard.relationship}
             createAt={selectedCard.createdAt}
