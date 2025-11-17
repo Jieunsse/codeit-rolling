@@ -177,6 +177,7 @@ function PostIdPage() {
               data={cardData}  
               onClick={() => handleCardClcik(cardData)}
               onDelete={handleDeleteMessage}
+              recipientName={recipientName}
             />
           ))}
         </div>
