@@ -140,7 +140,7 @@ function PostPage() {
     try {
       const data = await createRecipient(bodyObj);
       console.log(data);
-      navigate(`/`);
+      navigate(`/post/${id}`);
     } catch (error) {
       console.error(error);
     }
