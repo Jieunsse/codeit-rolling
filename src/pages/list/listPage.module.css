@@ -88,6 +88,24 @@
 
 
 @media (width <= 767px) {
+  .section {
+    width: 100%;
+    text-align: left;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .categoryTitle,
+  .categorySubTitle {
+    margin: 32px 0 16px;
+    padding-left: 4px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: left;
+    color: var(--gray-900);
+  }
+  
   .inputCounterWrapper {
     gap: 12px;
     align-items: center;
@@ -98,5 +116,12 @@
     width: 320px;
     height: 56px;
     font-size: 16px;
+  }
+
+  .box {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding: 0 16px;
   }
 }
