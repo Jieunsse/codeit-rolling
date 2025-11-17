@@ -1,11 +1,11 @@
 import Button from '@/components/common/button/base/Button';
 import Header from '@/components/common/header/Header';
-import Input from '@/components/common/input/Input';
-import BackgroundOption from '@/components/option/BackgroundOption';
 import styles from '@/pages/post/PostPage.module.css';
-import updateIcon from 'src/components/assets/update.svg';
+import RecipientInput from './components/RecipientInput';
+import BackgroundSelector from './components/BackgroundSelector';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { createRecipient } from '@/pages/post/api/recipientsAPI';
 
 function PostPage() {
   const [name, setName] = useState('');
@@ -138,17 +138,8 @@ function PostPage() {
     };
 
     try {
-      const res = await fetch(
-        'https://rolling-api.vercel.app/20-3/recipients/',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(bodyObj),
-        }
-      );
-      const data = await res.json();
+      const data = await createRecipient(bodyObj);
       console.log(data);
-
       navigate(`/`);
     } catch (error) {
       console.error(error);
@@ -160,113 +151,27 @@ function PostPage() {
       <Header />
       <div className={styles.Container}>
         <div className={styles.mainContainer}>
-          <div className={styles.formContainer}>
-            <div className={styles.formText}>To.</div>
-            <Input
-              className={styles.formBox}
-              value={name}
-              hasError={hasError}
-              onChange={e => {
-                setName(e.target.value);
-                if (e.target.value.trim() !== '') {
-                  setHasError(false);
-                }
-              }}
-              onBlur={() => {
-                if (name.trim() === '') {
-                  setHasError(true);
-                }
-              }}
-              errorMessage="값을 입력해 주세요"
-              placeholder={'받는 사람 이름을 입력해 주세요'}
-            />
-          </div>
-          <div>
-            <div className={styles.optionTitle}>배경화면을 선택해 주세요.</div>
-            <div className={styles.optionDescription}>
-              컬러를 선택하거나, 이미지를 선택할 수 있습니다.
-            </div>
-            <div className={styles.buttonContainer}>
-              <div className={styles.toggleWrapper}>
-                <div
-                  className={
-                    backgroundType === 'color'
-                      ? `${styles.indicator} ${styles.left}`
-                      : `${styles.indicator} ${styles.right}`
-                  }
-                ></div>
-
-                <button
-                  onClick={() => setBackgroundType('color')}
-                  className={
-                    backgroundType === 'color'
-                      ? styles.activeText
-                      : styles.inactiveText
-                  }
-                >
-                  컬러
-                </button>
-                <button
-                  onClick={() => setBackgroundType('image')}
-                  className={
-                    backgroundType === 'image'
-                      ? styles.activeText
-                      : styles.inactiveText
-                  }
-                >
-                  이미지
-                </button>
-              </div>
-              <div className={styles.changeButton}>
-                <Button
-                  title="다른 이미지 보기"
-                  variant="outlined"
-                  size={28}
-                  isIcon
-                  icon={{ src: updateIcon, className: styles.updateIcon }}
-                  interactionState={interactionState}
-                  onMouseEnter={() => setInteractionState('hover')}
-                  onMouseLeave={() => setInteractionState('enabled')}
-                  onMouseDown={() => setInteractionState('pressed')}
-                  onMouseUp={() => setInteractionState('hover')}
-                  onFocus={() => setInteractionState('focus')}
-                  onBlur={() => setInteractionState('enabled')}
-                  className={`${styles.randomButton} ${
-                    backgroundType === 'color' ? styles.randomButtonHidden : ''
-                  }`}
-                  onClick={() => setRandomChange(prev => prev + 1)}
-                />
-              </div>
-            </div>
-            <div className={styles.optionBox}>
-              {backgroundType === 'color'
-                ? colorArray.map((item, index) => (
-                    <BackgroundOption
-                      key={index}
-                      background={item.value}
-                      selected={selected === index}
-                      onClick={() => {
-                        setSelected(index);
-                        setBackgroundColor(item.color);
-                        console.log(backgroundColor);
-                      }}
-                    />
-                  ))
-                : randomImages.map((item, index) => (
-                    <BackgroundOption
-                      key={index}
-                      background={item.image}
-                      selected={selected === index}
-                      mode="image"
-                      onClick={() => {
-                        setSelected(index);
-                        setBackgroundImage(item.image);
-                        console.log(backgroundImage);
-                      }}
-                    />
-                  ))}
-            </div>
-          </div>
+          <RecipientInput
+            name={name}
+            setName={setName}
+            hasError={hasError}
+            setHasError={setHasError}
+            styles={styles}
+          />
+          <BackgroundSelector
+            backgroundType={backgroundType}
+            setBackgroundType={setBackgroundType}
+            interactionState={interactionState}
+            setInteractionState={setInteractionState}
+            colorArray={colorArray}
+            randomImages={randomImages}
+            selected={selected}
+            setSelected={setSelected}
+            setBackgroundColor={setBackgroundColor}
+            setBackgroundImage={setBackgroundImage}
+            setRandomChange={setRandomChange}
+            styles={styles}
+          />
           <div className={styles.buttonBox}>
             <Button
               title="생성하기"
