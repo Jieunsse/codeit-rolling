@@ -2,7 +2,6 @@ import AddCard from "@/components/card/AddCard";
 import Card from "@/components/card/Card";
 import Header from "@/components/common/header/Header";
 import SubHeader from "@/components/subHeader/SubHeader";
-import Toast from "@/components/toast/Toast";
 import Modal from "@/components/modal/Modal";
 import styles from "@/pages/postId/PostIdPage.module.css";
 import { Link, useParams, useNavigate } from "react-router-dom";
