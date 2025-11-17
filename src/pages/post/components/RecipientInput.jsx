@@ -1,11 +1,12 @@
 import Input from '@/components/common/input/Input';
+import clsx from 'clsx';
 
 function RecipientInput({ name, setName, hasError, setHasError, styles }) {
   return (
     <div className={styles.formContainer}>
       <div className={styles.formText}>To.</div>
       <Input
-        className={styles.formBox}
+        className={clsx(styles.formBox, styles.inputOverride)}
         value={name}
         hasError={hasError}
         onChange={e => {

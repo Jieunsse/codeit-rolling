@@ -1,6 +1,6 @@
 .card {
-  width: 168px;
-  height: 168px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: 16px;
   border: 1px solid var(--white);
   position: relative;
@@ -55,4 +55,11 @@
 }
 .tiltWrapper {
   display: inline-block;
+}
+.backgroundItem {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 정사각형 */
+  border-radius: 16px;
+  cursor: pointer;
+  overflow: hidden;
 }
