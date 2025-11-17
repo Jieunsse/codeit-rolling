@@ -31,7 +31,59 @@
   left: -40px;
 }
 
-/* 오른쪽 버튼을 캐러셀 영역 밖에 */
 .rightArrow {
   right: -40px;
 }
+
+@media (width <= 1247px) and (width >= 768px) {
+  .wrapper {
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .sliderWindow {
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .cardContainer {
+    width: max-content;
+    padding: 0 24px;
+    gap: 16px;
+    scroll-snap-align: start;
+  }
+
+  .leftArrow,
+  .rightArrow {
+    display: none;
+  }
+}
+
+@media (width <= 767px) {
+  .wrapper {
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .sliderWindow {
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .cardContainer {
+    width: max-content;
+    padding: 0 24px;
+    gap: 12px;
+    scroll-snap-align: start;
+  }
+
+  .leftArrow,
+  .rightArrow {
+    display: none;
+  }
+}
+

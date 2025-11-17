@@ -79,4 +79,24 @@
   animation: fadeIn 0.6s ease forwards;
 }
 
+.inputCounterWrapper {
+  display: flex;
+  gap: 24px;
+  align-items: end;
+  justify-content: center;
+}
 
+
+@media (width <= 767px) {
+  .inputCounterWrapper {
+    gap: 12px;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .listPageButton {
+    width: 320px;
+    height: 56px;
+    font-size: 16px;
+  }
+}

@@ -39,14 +39,7 @@ export default function ListPage() {
     <>
       <Header isButton />
       <div className={styles.pageWrapper}>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'end',
-            gap: '24px',
-            justifyContent: 'center',
-          }}
-        >
+        <div className={styles.inputCounterWrapper}>
           <ListInput
             searchTerm={searchTerm}
             onSearch={handleSearch}
@@ -68,7 +61,11 @@ export default function ListPage() {
           </section>
         </div>
         <div className={styles.box}>
-          <Button title="나도 만들어보기" onClick={handleClick} />
+          <Button
+            title="나도 만들어보기"
+            onClick={handleClick}
+            className={styles.listPageButton}
+          />
         </div>
       </div>
     </>
