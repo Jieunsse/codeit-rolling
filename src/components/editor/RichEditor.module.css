@@ -1,0 +1,109 @@
+.editorWrapper {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* 툴바 전체 */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;     /* 핵심! 넘치면 다음 줄로 내려가기 */
+  align-items: center;
+  gap: 6px 10px;       /* row-gap / column-gap */
+  padding: 8px 10px;
+  background: #f3f4f6;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+
+/* 공통 버튼 스타일 */
+.btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background: #e5e7eb;
+}
+
+.active {
+  background: #eef2ff;
+  border: 1px solid #6366f1;
+}
+
+/* 에디터 영역 */
+.editorContent {
+  min-height: 240px;
+  padding: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+  cursor: text;
+}
+
+/* -------- FontSelector -------- */
+
+.fontSelector {
+  position: relative;
+  margin-right: 8px;
+}
+
+.fontSelectorButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  font-size: 14px;
+  background: #f3f4f6; /* ← 이 부분이 핵심 */
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #374151;
+}
+
+.fontSelectorButton:hover {
+  background: #e5e7eb;
+}
+
+/* 작은 삼각형 caret */
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #374151;
+  margin-top: 2px;
+}
+
+.fontDropdown {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 4px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+}
+
+.fontOption {
+  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.fontOption:hover {
+  background: #f3f4f6;
+}
