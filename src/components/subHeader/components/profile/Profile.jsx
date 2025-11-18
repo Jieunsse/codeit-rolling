@@ -1,6 +1,6 @@
 import ProfileImage from '@components/common/profileImage/ProfileImage.jsx';
 import ProfileCounter from '@components/subHeader/components/profile/profileCounter/ProfileCounter.jsx';
-import styles from './Profile.module.css';
+import styles from './profile.module.css';
 
 export default function Profile({ profileImages = [], profileCount }) {
   const images = profileImages.slice(0, 3);
