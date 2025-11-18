@@ -5,8 +5,6 @@ import { useRecipients } from '@pages/list/hooks/useRecipients.js';
 export default function Counter() {
   const { count, loading } = useRecipients();
 
-  console.log(count);
-
   return (
     <div className={styles.wrapper}>
       <CountUp

@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+@media (max-width: 900px) {
+  .profileWrapper {
+    display: none;
+  }
+}
+
 .profileWrapper > div {
   margin-left: -24px;
 }

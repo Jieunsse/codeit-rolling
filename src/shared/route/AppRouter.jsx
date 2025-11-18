@@ -3,6 +3,8 @@ import Home from '@pages/home/Home.jsx';
 import ListPage from '@pages/list/ListPage.jsx';
 import PostPage from '@/pages/post/PostPage';
 import PostIdPage from '@pages/postId/PostIdPage.jsx';
+import PostMessagePage from '@pages/postMessage/PostMessagePage.jsx';
+
 
 export default function AppRouter() {
   return (
@@ -12,6 +14,7 @@ export default function AppRouter() {
         <Route path="/list" element={<ListPage />} />
         <Route path="/post" element={<PostPage />} />
         <Route path="/post/:recipientId" element={<PostIdPage />} />
+        <Route path="/post/:id/message" element={<PostMessagePage />} />
       </Routes>
     </BrowserRouter>
   );

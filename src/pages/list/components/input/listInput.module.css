@@ -19,3 +19,26 @@
   background-color: var(--purple-600);
   cursor: pointer;
 }
+
+@media (width <= 767px) {
+  .input {
+    width: 220px;
+    height: 42px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .searchButton {
+    width: 60px;
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .inputWrapper {
+    gap: 4px;
+  }
+
+  .inputBox {
+    margin-top: 32px;
+  }
+}

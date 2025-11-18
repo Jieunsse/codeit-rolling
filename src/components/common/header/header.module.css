@@ -7,7 +7,6 @@
 }
 
 .headerContainer {
-  box-sizing: border-box;
   display: flex;
   width: 1200px;
   margin-top: 11px;
@@ -35,3 +34,56 @@
   display: flex;
   gap: 12px;
 }
+
+@media (width <= 1247px) {
+  .headerContainer {
+    width: 100%;
+    padding: 0 24px;
+    justify-content: space-between;
+  }
+
+  .leftBox {
+    gap: 8px;
+  }
+}
+
+/* ✅ 모바일 전용 (767px 이하) */
+@media (width <= 767px) {
+  .headerContainer {
+    width: 100%;
+    padding: 0 16px; /* 좌우 여백 조금 줄임 */
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 84px;
+    height: auto;
+  }
+
+  .leftBox {
+    gap: 6px;
+  }
+
+  .button {
+    width: auto;
+    height: 36px;
+    min-width: 110px;
+    padding: 0 10px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+
+  .googleButton {
+    transform: scale(0.85);
+    transform-origin: right center;
+  }
+
+  .googleButton button {
+    heighT: 36px;
+    padding: 0 8px;
+    font-size: 13px;
+  }
+}
+

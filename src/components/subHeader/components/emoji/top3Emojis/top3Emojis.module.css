@@ -1,6 +1,5 @@
 .wrapper {
   display: grid;
-  padding: 8px;
   gap: 8px 6px;
   grid-template-columns: repeat(4, auto);
 }

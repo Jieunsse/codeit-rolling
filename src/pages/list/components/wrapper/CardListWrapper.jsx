@@ -39,14 +39,12 @@ export default function CardListWrapper({ cards = [] }) {
     return `translateX(-${slideIndex * (cardWidth * cardsPerPage + gap * cardsPerPage)}px)`;
   };
 
-  // ✅ 현재 슬라이드에 남은 카드 개수 계산
   const startIndex = slideIndex * cardsPerPage;
   const visibleCards = cards.slice(startIndex, startIndex + cardsPerPage);
   const hasNextSlide = cards.length > startIndex + visibleCards.length;
 
   return (
     <div className={styles.wrapper}>
-      {/* 왼쪽 버튼: 첫 페이지 아닐 때만 */}
       {slideIndex > 0 && (
         <ArrowButton
           direction="left"
@@ -74,7 +72,6 @@ export default function CardListWrapper({ cards = [] }) {
         </div>
       </div>
 
-      {/* ✅ 다음 슬라이드에 카드가 없으면 오른쪽 버튼 렌더링 안함 */}
       {hasNextSlide && (
         <ArrowButton
           direction="right"

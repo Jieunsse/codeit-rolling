@@ -1,5 +1,6 @@
 import CardMessageInfo from './CardMessageInfo';
 import CardReactionBar from './CardReactionBar';
+import { useNavigate } from 'react-router-dom';
 import styles from './CardList.module.css';
 import image01 from './assets/pattern_01.png';
 import image02 from './assets/pattern_02.png';
@@ -39,6 +40,7 @@ function CardList({
 }) {
   const { type, value, id } = background;
   const colorShape = [image01, image02, image03, image04];
+  const navigate = useNavigate();
 
   const backgroundStyle =
     type === 'color'
@@ -53,7 +55,11 @@ function CardList({
   const backgroundValueStyle = `${styles.container} ${type === 'color' ? styles.valueColor : styles.valueImage}`;
 
   return (
-    <div className={backgroundValueStyle} style={backgroundStyle}>
+    <div
+      className={backgroundValueStyle}
+      style={backgroundStyle}
+      onClick={() => navigate(`/post/${id}`)}
+    >
       <div className={styles.containerShape} style={colorShapeStyle}></div>
       <div className={styles.overlay}></div>
       <CardMessageInfo
