@@ -9,7 +9,6 @@
   padding: 0;
 }
 
-
 .inner {
   display: flex;
   flex-direction: column;
@@ -25,6 +24,7 @@
 .label {
   font-size: 18px;
   font-weight: 600;
+  color: var(--gray-900); /* 제목 텍스트 */
 }
 
 /* 프로필 이미지 */
@@ -48,7 +48,7 @@
 }
 
 .profileGuide {
-  color: #6b7280;
+  color: var(--gray-500);
   font-size: 14px;
 }
 
@@ -77,9 +77,9 @@
 /* --- Tiptap Editor Wrapper --- */
 .editorWrapper {
   height: 260px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--gray-200);
   border-radius: 8px;
-  background: #fff;
+  background: var(--white);
   overflow: auto;
 }
 
@@ -89,6 +89,7 @@
   box-sizing: border-box;
   font-size: 16px;
   line-height: 1.5;
+  color: var(--gray-900);
 }
 
 /* 버튼 */

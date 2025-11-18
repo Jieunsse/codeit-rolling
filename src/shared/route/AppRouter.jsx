@@ -12,7 +12,7 @@ export default function AppRouter() {
         <Route path="/" element={<Home />} />
         <Route path="/list" element={<ListPage />} />
         <Route path="/post/:recipientId" element={<PostIdPage />} />
-        <Route path="/post/:recipientId/message" element={<PostMessagePage />} />
+        <Route path="/post/:id/message" element={<PostMessagePage />} />
       </Routes>
     </BrowserRouter>
   );
