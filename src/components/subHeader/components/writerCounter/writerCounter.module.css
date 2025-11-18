@@ -4,6 +4,12 @@
   flex-direction: row;
 }
 
+@media (max-width: 1024px) {
+  .countWrapper {
+    display: none;
+  }
+}
+ 
 .numberCount {
   font-weight: 500;
 }
