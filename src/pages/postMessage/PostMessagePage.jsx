@@ -158,6 +158,7 @@ export default function PostMessagePage() {
       console.log("POST Result:", result);
 
       if (res.ok) {
+        localStorage.setItem('my_name', sender);
         alert("메시지가 성공적으로 생성되었습니다!");
         navigate(`/post/${recipientId}`);   // ← 이동!
       } else {
