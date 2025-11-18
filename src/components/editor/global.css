@@ -1,0 +1,46 @@
+.ProseMirror {
+  min-height: 240px !important;
+  padding: 12px !important;
+  box-sizing: border-box !important;
+  cursor: text !important;
+  font-family: inherit !important;
+}
+
+.ProseMirror p {
+  margin: 0 0 8px;
+}
+
+.ProseMirror strong { font-weight: bold !important; }
+.ProseMirror em { font-style: italic !important; }
+.ProseMirror u { text-decoration: underline !important; }
+.ProseMirror s { text-decoration: line-through !important; }
+
+.ProseMirror ul { list-style: disc !important; padding-left: 20px !important; }
+.ProseMirror ol { list-style: decimal !important; padding-left: 20px !important; }
+
+
+.ProseMirror:focus-visible,
+.ProseMirror:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.font-family-Noto-Sans {
+  font-family: "Noto Sans", sans-serif !important;
+}
+
+.font-family-Pretendard {
+  font-family: "Pretendard", sans-serif !important;
+}
+
+/* 서버 Enum: "나눔명조" → 클래스: font-family-나눔명조 */
+.font-family-나눔명조 {
+  font-family: "Nanum Myeongjo", serif !important;
+}
+
+/* 서버 Enum: "나눔손글씨 손편지체" → 클래스: font-family-나눔손글씨-손편지체 */
+.font-family-나눔손글씨-손편지체 {
+  font-family: "Poor Story", cursive !important;
+}
+
