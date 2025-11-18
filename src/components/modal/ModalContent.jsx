@@ -18,7 +18,7 @@ function ModalContent({ message }) {
     <>
       <div className={styles.messageBox}>
         <div className={styles.scrollArea}>
-          <p 
+          <div 
             className={styles.message}
             dangerouslySetInnerHTML={{ __html: message}}
           />
