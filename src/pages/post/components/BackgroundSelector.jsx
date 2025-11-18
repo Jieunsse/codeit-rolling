@@ -3,16 +3,14 @@ import BackgroundOption from '@/components/option/BackgroundOption';
 import updateIcon from 'src/components/assets/update.svg';
 
 function BackgroundSelector({
-  backgroundType,
-  setBackgroundType,
+  background: { type },
+  setBackground,
   interactionState,
   setInteractionState,
   colorArray,
   randomImages,
   selected,
   setSelected,
-  setBackgroundColor,
-  setBackgroundImage,
   setRandomChange,
   styles,
 }) {
@@ -28,29 +26,25 @@ function BackgroundSelector({
         <div className={styles.toggleWrapper}>
           <div
             className={
-              backgroundType === 'color'
+              type === 'color'
                 ? `${styles.indicator} ${styles.left}`
                 : `${styles.indicator} ${styles.right}`
             }
           />
 
           <button
-            onClick={() => setBackgroundType('color')}
+            onClick={() => setBackground(prev => ({ ...prev, type: 'color' }))}
             className={
-              backgroundType === 'color'
-                ? styles.activeText
-                : styles.inactiveText
+              type === 'color' ? styles.activeText : styles.inactiveText
             }
           >
             컬러
           </button>
 
           <button
-            onClick={() => setBackgroundType('image')}
+            onClick={() => setBackground(prev => ({ ...prev, type: 'image' }))}
             className={
-              backgroundType === 'image'
-                ? styles.activeText
-                : styles.inactiveText
+              type === 'image' ? styles.activeText : styles.inactiveText
             }
           >
             이미지
@@ -73,7 +67,7 @@ function BackgroundSelector({
             onFocus={() => setInteractionState('focus')}
             onBlur={() => setInteractionState('enabled')}
             className={`${styles.randomButton} ${
-              backgroundType === 'color' ? styles.randomButtonHidden : ''
+              type === 'color' ? styles.randomButtonHidden : ''
             }`}
             onClick={() => setRandomChange(prev => prev + 1)}
           />
@@ -82,7 +76,7 @@ function BackgroundSelector({
 
       {/* options - 배경 옵션 */}
       <div className={styles.optionBox}>
-        {backgroundType === 'color'
+        {type === 'color'
           ? colorArray.map((item, index) => (
               <BackgroundOption
                 key={index}
@@ -90,7 +84,7 @@ function BackgroundSelector({
                 selected={selected === index}
                 onClick={() => {
                   setSelected(index);
-                  setBackgroundColor(item.color);
+                  setBackground(prev => ({ ...prev, color: item.color }));
                 }}
               />
             ))
@@ -102,7 +96,7 @@ function BackgroundSelector({
                 mode="image"
                 onClick={() => {
                   setSelected(index);
-                  setBackgroundImage(item.image);
+                  setBackground(prev => ({ ...prev, image: item.image }));
                 }}
               />
             ))}

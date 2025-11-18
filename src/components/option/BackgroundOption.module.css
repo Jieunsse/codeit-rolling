@@ -9,6 +9,11 @@
   align-items: center;
   justify-content: center;
 
+  /* 옵션 이미지 자동 조정 */
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+
   transition: box-shadow 0.2s ease;
 }
 
@@ -16,6 +21,7 @@
 .check {
   width: 44px;
   height: 44px;
+  animation: pop 0.25s ease;
 }
 
 .card:hover {
@@ -25,9 +31,6 @@
 .imageSelected {
   transform: scale(1.03);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
 }
 
 /* 이미지 모드에서 선택된 카드에만 적용 */
@@ -55,11 +58,4 @@
 }
 .tiltWrapper {
   display: inline-block;
-}
-.backgroundItem {
-  width: 100%;
-  aspect-ratio: 1 / 1; /* 정사각형 */
-  border-radius: 16px;
-  cursor: pointer;
-  overflow: hidden;
 }
