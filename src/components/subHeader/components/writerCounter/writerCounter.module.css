@@ -1,0 +1,9 @@
+.countWrapper {
+  display: flex;
+  font-size: 14px;
+  flex-direction: row;
+}
+
+.numberCount {
+  font-weight: 500;
+}

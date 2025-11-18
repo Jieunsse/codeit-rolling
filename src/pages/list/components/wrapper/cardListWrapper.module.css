@@ -1,0 +1,37 @@
+.wrapper {
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+}
+
+.sliderWindow {
+  width: max-content;
+  overflow: hidden;
+}
+
+.cardContainer {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.leftArrow,
+.rightArrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.leftArrow {
+  left: -40px;
+}
+
+/* 오른쪽 버튼을 캐러셀 영역 밖에 */
+.rightArrow {
+  right: -40px;
+}

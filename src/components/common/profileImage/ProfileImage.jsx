@@ -27,3 +27,4 @@ function ProfileImage({ imageUrl, className = '', style = {}, alt }) {
 }
 
 export default ProfileImage;
+

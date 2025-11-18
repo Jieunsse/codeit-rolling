@@ -1,0 +1,115 @@
+.Container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* .mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+} */
+.formContainer {
+  max-width: 720px;
+  padding: 57px 0 50px 0;
+}
+.formText {
+  font-family: Pretendard, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 42px;
+  letter-spacing: -1%;
+  padding-bottom: 12px;
+}
+.formBox {
+  width: 720px;
+}
+.optionTitle {
+  font-family: Pretendard, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -1%;
+  color: var(--gray-900);
+  padding-bottom: 4px;
+}
+.optionDescription {
+  font-family: Pretendard, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: -1%;
+  color: var(--gray-500);
+}
+.toggleWrapper {
+  position: relative;
+  width: 244px;
+  height: 40px;
+  background: var(--gray-100);
+  border-radius: 8px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  margin: 24px 0 45px 0;
+}
+.toggleWrapper button {
+  position: relative;
+  z-index: 2;
+  width: 122px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: Pretendard, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-500);
+}
+.toggleWrapper button.activeText {
+  color: var(--purple-600);
+}
+.toggleWrapper button.inactiveText {
+  color: var(--gray-500);
+}
+.indicator {
+  position: absolute;
+  width: 122px;
+  height: 36px;
+  background: white;
+  border: 2px solid var(--purple-600);
+  border-radius: 8px;
+  top: 2px;
+  transition: all 0.25s ease-in-out;
+  z-index: 1;
+}
+.indicator.left {
+  left: 2px;
+}
+.indicator.right {
+  left: 120px;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.changeButton {
+  margin-top: 24px;
+}
+
+.optionBox {
+  width: 720px;
+  height: 168px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+.buttonBox {
+  margin: 69px 0;
+}
+.submitButton {
+  width: 720px;
+}
