@@ -13,6 +13,7 @@ import styles from "@/components/common/input/Input.module.css";
 function Input({
   value,
   onChange,
+  onBlur,
   placeholder = "이름을 입력해주세요",
   className = "",
   hasError = false,
@@ -25,6 +26,7 @@ function Input({
         type="text"
         value={value}
         onChange={onChange}
+        onBlur={onBlur}
         placeholder={placeholder}
         disabled={disabled}
         className={clsx(styles.input, hasError && styles.error, className)}

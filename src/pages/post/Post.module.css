@@ -1,24 +1,19 @@
 .page {
+  padding-top: 32px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  font-family: "Pretendard", sans-serif;
+  justify-content: center;
 }
 
 .main {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 40px 16px 80px;
-  box-sizing: border-box;
+  width: 720px;
+  padding: 0;
 }
 
+
 .inner {
-  width: 720px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 40px;
 }
 
 .fieldGroup {
@@ -28,35 +23,36 @@
 }
 
 .label {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
-  color: var(--gray-900);
 }
 
+/* 프로필 이미지 */
 .profileRow {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .profileButton {
-  border: none;
+  padding: 0;
   background: none;
+  border: none;
   cursor: pointer;
 }
 
 .profileImg {
   width: 80px;
   height: 80px;
-  border-radius: 100px;
+  border-radius: 50%;
 }
 
 .profileGuide {
-  font-size: 16px;
-  color: var(--gray-500);
-  font-weight: 400;
+  color: #6b7280;
+  font-size: 14px;
 }
 
+/* 프로필 리스트 */
 .profileList {
   margin-top: 8px;
   display: flex;
@@ -66,26 +62,36 @@
 }
 
 .profileItem {
-  border: none;
+  padding: 0;
   background: none;
+  border: none;
   cursor: pointer;
 }
 
 .profileItem img {
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   border-radius: 100px;
 }
 
-.editorPlaceholder {
+/* --- Tiptap Editor Wrapper --- */
+.editorWrapper {
   height: 260px;
-  border: 1px solid var(--gray-300);
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
-  background-color: var(--gray-50);
+  background: #fff;
+  overflow: auto;
 }
 
+/* EditorContent 자체 */
+.editorContent {
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* 버튼 */
 .submitWrapper {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 8px;
+  margin-top: 12px;
 }
