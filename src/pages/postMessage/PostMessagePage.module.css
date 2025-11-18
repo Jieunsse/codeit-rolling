@@ -96,3 +96,84 @@
 .submitWrapper {
   margin-top: 12px;
 }
+
+
+/* ---------------- 태블릿 (최대 768px) ---------------- */
+@media (max-width: 768px) {
+
+  .page {
+    padding-top: 114px;
+    padding-bottom: 132px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .main {
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .inner {
+    gap: 40px;
+  }
+
+  .profileList {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5개씩 정렬 */
+    grid-auto-rows: auto;
+    gap: 12px;
+    overflow-x: hidden; /* 태블릿에서는 스크롤 제거 */
+    margin-top: 8px;
+  }
+
+  .profileItem img {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+  }
+
+  .submitWrapper {
+    margin-top: 24px;
+  }
+}
+
+
+
+/* ---------------- 모바일 (최대 480px) ---------------- */
+
+@media (max-width: 480px) {
+
+  .page {
+    padding: 50px 20px; /* Figma 기준 좌20 상하50 */
+  }
+
+  .main {
+    max-width: 360px;
+    width: 100%;
+  }
+
+  .inner {
+    gap: 40px;
+  }
+
+  .profileList {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5개씩 정렬 */
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+
+  .profileItem img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+  }
+
+  .submitWrapper {
+    margin-top: 20px;
+  }
+
+
+}

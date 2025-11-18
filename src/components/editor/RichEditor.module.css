@@ -8,12 +8,14 @@
 /* 툴바 전체 */
 .toolbar {
   display: flex;
+  flex-wrap: wrap;     /* 핵심! 넘치면 다음 줄로 내려가기 */
   align-items: center;
-  gap: 4px;
+  gap: 6px 10px;       /* row-gap / column-gap */
   padding: 8px 10px;
   background: #f3f4f6;
   border-bottom: 1px solid #e5e7eb;
 }
+
 
 /* 공통 버튼 스타일 */
 .btn {
