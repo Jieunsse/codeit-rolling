@@ -43,7 +43,6 @@ function PostIdPage() {
         return; 
       }
 
-      const newReaction = await createReaction(recipientId, selectedEmoji);
       setRefreshReactions(prev => prev + 1); 
       
     } catch (error) {
