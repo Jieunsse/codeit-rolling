@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 import Header from "@/components/common/Header/Header";
 import Dropdown from "@/components/common/Dropdown/Dropdown";
@@ -9,10 +11,12 @@ import ProfileImage from "@/components/common/ProfileImage/ProfileImage";
 import RichEditor from "@/components/editor/RichEditor";
 import purpleProfile from "@/components/assets/profile-image-purple.png";
 
-import styles from "@/pages/post/Post.module.css";
+import styles from "@/pages/postMessage/PostMessagePage.module.css";
 
-export default function Post() {
+export default function PostMessagePage() {
   const { id: recipientId } = useParams();
+  const navigate = useNavigate();
+
 
   // -----------------------------
   // From. 입력 + 유효성 검사
@@ -128,14 +132,14 @@ export default function Post() {
       return;
     }
 
-    const url = `https://rolling-api.vercel.app/20-3/recipients/15197/messages/`;
+    const url = `https://rolling-api.vercel.app/20-3/recipients/${recipientId}/messages/`;
 
     const isLocalImage = !selectedProfile.startsWith("http");
     const safeProfileURL = isLocalImage ? DEFAULT_PROFILE : selectedProfile;
 
     const payload = {
       team: "20-3",
-      recipientId: 15197,
+      recipientId: Number(recipientId),
       sender,
       profileImageURL: safeProfileURL,
       relationship,
@@ -155,6 +159,7 @@ export default function Post() {
 
       if (res.ok) {
         alert("메시지가 성공적으로 생성되었습니다!");
+        navigate(`/post/${recipientId}`);   // ← 이동!
       } else {
         alert(result.detail || "요청 실패");
       }
