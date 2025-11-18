@@ -6,3 +6,12 @@
   background: none;
   cursor: pointer;
 }
+
+@media (width <= 767px) {
+  .googleLoginButton {
+    width: 120px;   /* 기존 160px → 120px */
+    height: 36px;   /* 기존 40px → 36px */
+    padding: 0 8px;
+    font-size: 13px;
+  }
+}
