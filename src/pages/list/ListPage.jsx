@@ -4,7 +4,7 @@ import { useSearch } from '@pages/list/hooks/useSearch.js';
 import Header from '@components/common/header/Header.jsx';
 import CardListWrapper from '@pages/list/components/wrapper/CardListWrapper.jsx';
 import Button from '@components/common/button/base/Button.jsx';
-import styles from './ListPage.module.css';
+import styles from './listPage.module.css';
 import ListInput from '@pages/list/components/input/ListInput.jsx';
 import Counter from '@pages/list/components/counter/Counter.jsx';
 
