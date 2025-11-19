@@ -174,7 +174,8 @@ function PostIdPage() {
           {messages.map((cardData) => (
             <Card 
               key={cardData.id} 
-              data={cardData}  
+              data={cardData}
+              font={cardData.font}
               onClick={() => handleCardClcik(cardData)}
               onDelete={handleDeleteMessage}
               recipientName={recipientName}
@@ -189,7 +190,8 @@ function PostIdPage() {
             name={selectedCard.sender}
             badge={selectedCard.relationship}
             createAt={selectedCard.createdAt}
-            message={selectedCard.content}  
+            message={selectedCard.content} 
+            font={selectedCard.font}
           />
         )}            
       </div>

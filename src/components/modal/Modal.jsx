@@ -59,7 +59,7 @@ function Modal({
           badge={badge}
           createAt={datePart}
         />
-        <ModalContent message={message} />
+        <ModalContent message={message} font={font} />
         <ModalFooter onClose={onClose} />
       </div>
     </div>,
