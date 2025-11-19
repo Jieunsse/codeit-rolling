@@ -37,6 +37,7 @@ function CardList({
   messageCount,
   reactions,
   background,
+  recipientId,
 }) {
   const { type, value, id } = background;
   const colorShape = [image01, image02, image03, image04];
@@ -58,7 +59,7 @@ function CardList({
     <div
       className={backgroundValueStyle}
       style={backgroundStyle}
-      onClick={() => navigate(`/post/${id}`)}
+      onClick={() => navigate(`/post/${recipientId}`)}
     >
       <div className={styles.containerShape} style={colorShapeStyle}></div>
       <div className={styles.overlay}></div>

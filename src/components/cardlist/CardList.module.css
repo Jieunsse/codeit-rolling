@@ -11,6 +11,7 @@
   border-radius: 16px;
   box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
   overflow: hidden;
+  cursor: pointer;
 }
 
 .containerShape {
@@ -29,7 +30,6 @@
   background-color: rgb(0 0 0 / 30%); /* 어두운 반투명 레이어 */
   inset: 0;
 }
-
 
 @media (width <= 767px) {
   .container {
