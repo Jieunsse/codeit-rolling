@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-import Header from '@/components/common/Header/Header.jsx';
+import Header from '@/components/common/header/Header.jsx';
 import Dropdown from '@/components/common/Dropdown/Dropdown.jsx';
 import Input from '@/components/common/Input/Input.jsx';
 import Button from '@/components/common/Button/base/Button.jsx';
