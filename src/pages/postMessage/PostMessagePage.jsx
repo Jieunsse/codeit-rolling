@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 import Header from '@/components/common/header/Header.jsx';
-import Dropdown from '@/components/common/Dropdown/Dropdown.jsx';
-import Input from '@/components/common/Input/Input.jsx';
-import Button from '@/components/common/Button/base/Button.jsx';
-import ProfileImage from '@/components/common/ProfileImage/ProfileImage.jsx';
+import Dropdown from '@/components/common/dropdown/Dropdown.jsx';
+import Input from '@/components/common/input/Input.jsx';
+import Button from '@/components/common/button/base/Button.jsx';
+import ProfileImage from '@/components/common/profileImage/ProfileImage.jsx';
 import RichEditor from '@/components/editor/RichEditor.jsx';
 import purpleProfile from '@/components/assets/profile-image-purple.png';
 
