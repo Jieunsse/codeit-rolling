@@ -17,10 +17,10 @@ function ModalContent({ message }) {
   return (
     <div className={styles.messageBox}>
       <div className={styles.scrollArea}>
-        <div
-          className={styles.message}
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
+      <div
+        className={`${styles.message} font-family-${font.replace(/\s+/g, "-")}`}
+        dangerouslySetInnerHTML={{ __html: message }}
+      />
       </div>
     </div>
   );

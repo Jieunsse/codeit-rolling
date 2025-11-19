@@ -38,9 +38,9 @@ function Card({ data, onClick, onDelete, recipientName }) {
             </button>
           )}
         </div>
-        <div 
-          className={styles.content}
-          dangerouslySetInnerHTML={{ __html: content }}
+        <div
+          className={`${styles.content} font-family-${data.font.replace(/\s+/g, "-")}`}
+          dangerouslySetInnerHTML={{ __html: data.content }}
         />
         <p className={styles.createdAt}>{datePart}</p>
       </div>
