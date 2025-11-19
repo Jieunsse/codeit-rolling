@@ -36,7 +36,10 @@ function Card({ data, onClick, onDelete }) {
             </button>
           )}
         </div>
-        <div className={styles.content}>{content}</div>
+        <div
+          className={styles.content}
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
         <p className={styles.createdAt}>{datePart}</p>
       </div>
   );
