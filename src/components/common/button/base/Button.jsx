@@ -17,6 +17,7 @@ export default function Button({
   variant = 'primary',
   interactionState = 'enabled',
   isIcon = false,
+  icon,
   ...props
 }) {
   if (variant === 'outlined') {
@@ -30,7 +31,10 @@ export default function Button({
     isIcon,
     size: props.size,
   });
-  const icon = getButtonIcon({ variant, className, isIcon });
+  const defaultIcon = getButtonIcon({ variant, className, isIcon });
+
+  // 부모에서 받은 아이콘이 우선 사용되도록 하는 코드
+  const finalIcon = icon || defaultIcon;
 
   return (
     <button
@@ -38,7 +42,9 @@ export default function Button({
       className={`${className} ${props.className || ''}`}
       disabled={interactionState === 'disabled'}
     >
-      {icon && <img src={icon.src} alt="icon" className={icon.className} />}
+      {icon && (
+        <img src={finalIcon.src} alt="icon" className={finalIcon.className} />
+      )}
       <span>{title}</span>
     </button>
   );

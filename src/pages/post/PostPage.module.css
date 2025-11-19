@@ -1,115 +1,211 @@
+/* PAGE WRAPPER */
 .Container {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
-/* .mainContainer {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-} */
-.formContainer {
+
+/* INTERNAL WRAPPER */
+.mainContainer {
+  width: 100%;
   max-width: 720px;
-  padding: 57px 0 50px 0;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
+
+/* FORM */
+.formContainer {
+  margin: 57px 0 50px;
+  width: 100%;
+}
+
 .formText {
   font-family: Pretendard, sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 42px;
-  letter-spacing: -1%;
   padding-bottom: 12px;
 }
+
+/* INPUT */
 .formBox {
-  width: 720px;
+  width: 100% !important;
 }
+
+/* OPTION SECTION */
 .optionTitle {
-  font-family: Pretendard, sans-serif;
   font-weight: 700;
   font-size: 24px;
-  line-height: 36px;
-  letter-spacing: -1%;
+  margin-bottom: 4px;
   color: var(--gray-900);
-  padding-bottom: 4px;
 }
+
 .optionDescription {
-  font-family: Pretendard, sans-serif;
-  font-weight: 400;
   font-size: 16px;
-  line-height: 26px;
-  letter-spacing: -1%;
   color: var(--gray-500);
-}
-.toggleWrapper {
-  position: relative;
-  width: 244px;
-  height: 40px;
-  background: var(--gray-100);
-  border-radius: 8px;
-  display: flex;
-  overflow: hidden;
-  align-items: center;
-  margin: 24px 0 45px 0;
-}
-.toggleWrapper button {
-  position: relative;
-  z-index: 2;
-  width: 122px;
-  height: 40px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-family: Pretendard, sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--gray-500);
-}
-.toggleWrapper button.activeText {
-  color: var(--purple-600);
-}
-.toggleWrapper button.inactiveText {
-  color: var(--gray-500);
-}
-.indicator {
-  position: absolute;
-  width: 122px;
-  height: 36px;
-  background: white;
-  border: 2px solid var(--purple-600);
-  border-radius: 8px;
-  top: 2px;
-  transition: all 0.25s ease-in-out;
-  z-index: 1;
-}
-.indicator.left {
-  left: 2px;
-}
-.indicator.right {
-  left: 120px;
+  margin-bottom: 16px;
 }
 .buttonContainer {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-}
-.changeButton {
-  margin-top: 24px;
+  align-items: center;
 }
 
-.optionBox {
-  width: 720px;
-  height: 168px;
-  display: flex;
-  justify-content: flex-start;
+/* TOGGLE */
+.toggleWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  max-width: 244px;
+  height: 40px;
+  background: var(--gray-100);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
   align-items: center;
+}
+
+.toggleWrapper button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important;
+  font-family: Pretendard, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+
+  /* 텍스트가 indicator 위로 오도록 */
+  position: relative;
+  z-index: 3;
+}
+
+.activeText {
+  color: var(--purple-600);
+}
+
+.inactiveText {
+  color: var(--gray-500);
+}
+
+.indicator {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  background: #fff;
+  border: 2px solid var(--purple-600);
+  border-radius: 8px;
+  transition: left 0.25s ease-in-out;
+  z-index: 1;
+}
+.left {
+  left: 0;
+}
+.right {
+  left: 50%;
+}
+
+/* 랜덤 버튼 */
+.changeButton {
+  margin-top: 12px;
+  display: flex;
+}
+
+.randomButton {
+  width: auto !important;
+  min-width: 100px;
+  height: 38px !important;
+  padding: 0 12px !important;
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.randomButtonHidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+.updateIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* OPTION GRID */
+.optionBox {
+  width: 100% !important;
+  max-width: 720px;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+  margin: 24px 0;
 }
+
+.optionBox > * {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* SUBMIT */
 .buttonBox {
-  margin: 69px 0;
+  margin: 69px 0 120px;
 }
+
 .submitButton {
-  width: 720px;
+  width: 100% !important;
+  height: 56px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 !important;
+}
+
+/* ============= TABLET ============= */
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 0 24px;
+  }
+}
+
+/* ============= MOBILE ============= */
+@media (max-width: 480px) {
+  header {
+    display: none;
+  }
+
+  .mainContainer {
+    padding: 0 20px;
+  }
+
+  .formText,
+  .optionTitle {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .optionDescription {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .toggleWrapper {
+    height: 36px;
+    max-width: 180px;
+  }
+
+  .optionBox {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .buttonBox {
+    margin-top: 40px;
+  }
 }

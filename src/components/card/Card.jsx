@@ -3,7 +3,7 @@ import RelationBadge from '@components/common/badge/relationBadge/RelationBadge'
 import trashImage from '@components/card/assets/trash.svg';
 import styles from './Card.module.css';
 
-function Card({ data, onClick, onDelete }) {
+function Card({ data, onClick, onDelete, recipientName }) {
   const {
     sender, 
     profileImageURL,
@@ -15,7 +15,9 @@ function Card({ data, onClick, onDelete }) {
   const datePart = createdAt.split('T')[0];
 
   const myName = localStorage.getItem('my_name');
-  const canDelete = myName === data.sender;
+  const isAuthor = myName === data.sender;
+  const isRecipient = myName === recipientName;
+  const canDelete = isAuthor || isRecipient;
 
   const handleDeleteClick = (e) => {
     e.stopPropagation();
@@ -36,7 +38,7 @@ function Card({ data, onClick, onDelete }) {
             </button>
           )}
         </div>
-        <div
+        <div 
           className={styles.content}
           dangerouslySetInnerHTML={{ __html: content }}
         />

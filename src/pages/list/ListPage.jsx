@@ -4,7 +4,7 @@ import { useSearch } from '@pages/list/hooks/useSearch.js';
 import Header from '@components/common/header/Header.jsx';
 import CardListWrapper from '@pages/list/components/wrapper/CardListWrapper.jsx';
 import Button from '@components/common/button/base/Button.jsx';
-import styles from './ListPage.module.css';
+import styles from './listPage.module.css';
 import ListInput from '@pages/list/components/input/ListInput.jsx';
 import Counter from '@pages/list/components/counter/Counter.jsx';
 
@@ -39,14 +39,7 @@ export default function ListPage() {
     <>
       <Header isButton />
       <div className={styles.pageWrapper}>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'end',
-            gap: '24px',
-            justifyContent: 'center',
-          }}
-        >
+        <div className={styles.inputCounterWrapper}>
           <ListInput
             searchTerm={searchTerm}
             onSearch={handleSearch}
@@ -68,7 +61,11 @@ export default function ListPage() {
           </section>
         </div>
         <div className={styles.box}>
-          <Button title="나도 만들어보기" onClick={handleClick} />
+          <Button
+            title="나도 만들어보기"
+            onClick={handleClick}
+            className={styles.listPageButton}
+          />
         </div>
       </div>
     </>

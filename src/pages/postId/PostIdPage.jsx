@@ -2,7 +2,6 @@ import AddCard from "@/components/card/AddCard";
 import Card from "@/components/card/Card";
 import Header from "@/components/common/header/Header";
 import SubHeader from "@/components/subHeader/SubHeader";
-import Toast from "@/components/toast/Toast";
 import Modal from "@/components/modal/Modal";
 import styles from "@/pages/postId/PostIdPage.module.css";
 import { Link, useParams, useNavigate } from "react-router-dom";
@@ -36,7 +35,6 @@ function PostIdPage() {
   };
 
   const handleEmojiSelect = useCallback(async (emojiData) => {
-    
     try {
       const selectedEmoji = emojiData; 
       
@@ -46,9 +44,6 @@ function PostIdPage() {
       }
 
       const newReaction = await createReaction(recipientId, selectedEmoji);
-      
-      console.log("리액션 성공:", newReaction);
-      
       setRefreshReactions(prev => prev + 1); 
       
     } catch (error) {
@@ -72,9 +67,6 @@ function PostIdPage() {
   };
 
   const handleDeleteRecipient = async () => {
-    const recipientName = recipientData.name; 
-    const myName = localStorage.getItem('my_name');
-
     if (myName !== recipientName) {
       alert("이 롤링페이퍼를 삭제할 권한이 없습니다.");
       return;
@@ -85,7 +77,7 @@ function PostIdPage() {
       return;
     }
     if (String(inputId) !== String(recipientId)) {
-      alert("고유 ID가 일치하지 않습니다.");
+      alert("비밀번호가 일치하지 않습니다.");
       return;
     }
     if (window.confirm("롤링페이퍼를 삭제하시겠습니까?")) {
@@ -153,8 +145,6 @@ function PostIdPage() {
   };
 
   
-
-
   return(
     <div className={styles.pageBackground} style={pageStyle}>
       <div className={styles.headerWrap}>
@@ -187,6 +177,7 @@ function PostIdPage() {
               data={cardData}  
               onClick={() => handleCardClcik(cardData)}
               onDelete={handleDeleteMessage}
+              recipientName={recipientName}
             />
           ))}
         </div>
@@ -194,7 +185,7 @@ function PostIdPage() {
           <Modal 
             isOpen={isModalOpen}
             onClose={closeModal}
-            profileImg={selectedCard.profileImgURL}
+            profileImg={selectedCard.profileImageURL}
             name={selectedCard.sender}
             badge={selectedCard.relationship}
             createAt={selectedCard.createdAt}

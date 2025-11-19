@@ -17,6 +17,12 @@
   transform: translateX(-50%);
 }
 
+@media (max-width: 768px) {
+  .container {
+    width: 340px;
+  }
+}
+
 @keyframes fade-in-out {
   0% {
     bottom: 40px;

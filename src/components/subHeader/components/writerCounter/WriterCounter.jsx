@@ -1,4 +1,4 @@
-import styles from './WriterCounter.module.css';
+import styles from './writerCounter.module.css';
 
 export default function WriterCounter({ writerCount }) {
   return (

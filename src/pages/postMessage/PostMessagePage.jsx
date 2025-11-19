@@ -1,42 +1,40 @@
-import { useState, useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
+import Header from '@/components/common/header/Header.jsx';
+import Dropdown from '@/components/common/dropdown/Dropdown.jsx';
+import Input from '@/components/common/input/Input.jsx';
+import Button from '@/components/common/button/base/Button.jsx';
+import ProfileImage from '@/components/common/profileImage/ProfileImage.jsx';
+import RichEditor from '@/components/editor/RichEditor.jsx';
+import purpleProfile from '@/components/assets/profile-image-purple.png';
 
-import Header from "@/components/common/Header/Header";
-import Dropdown from "@/components/common/Dropdown/Dropdown";
-import Input from "@/components/common/Input/Input";
-import Button from "@/components/common/Button/base/Button";
-import ProfileImage from "@/components/common/ProfileImage/ProfileImage";
-import RichEditor from "@/components/editor/RichEditor";
-import purpleProfile from "@/components/assets/profile-image-purple.png";
-
-import styles from "@/pages/postMessage/PostMessagePage.module.css";
+import styles from '@/pages/postMessage/PostMessagePage.module.css';
 
 export default function PostMessagePage() {
   const { id: recipientId } = useParams();
   const navigate = useNavigate();
 
-
   // -----------------------------
   // From. 입력 + 유효성 검사
   // -----------------------------
-  const [sender, setSender] = useState("");
-  const [senderError, setSenderError] = useState("");
+  const [sender, setSender] = useState('');
+  const [senderError, setSenderError] = useState('');
   const [isSenderTouched, setIsSenderTouched] = useState(false);
 
   function validateSender(name) {
-    if (!name.trim()) return "값을 입력해 주세요.";
+    if (!name.trim()) return '값을 입력해 주세요.';
 
     const regex = /^[가-힣a-zA-Z]+$/;
-    if (!regex.test(name)) return "한글 또는 영문만 입력해주세요.";
+    if (!regex.test(name)) return '한글 또는 영문만 입력해주세요.';
 
-    if (name.length < 2) return "최소 2글자 이상 입력해주세요.";
+    if (name.length < 2) return '최소 2글자 이상 입력해주세요.';
 
-    return "";
+    return '';
   }
 
-  const handleSenderChange = (e) => {
+  const handleSenderChange = e => {
     const v = e.target.value;
     setSender(v);
     setSenderError(validateSender(v));
@@ -51,20 +49,18 @@ export default function PostMessagePage() {
   // 프로필
   // -----------------------------
   const DEFAULT_PROFILE =
-    "https://learn-codeit-kr-static.s3.ap-northeast-2.amazonaws.com/sprint-proj-image/default_avatar.png";
+    'https://learn-codeit-kr-static.s3.ap-northeast-2.amazonaws.com/sprint-proj-image/default_avatar.png';
 
-  
   const [profileList, setProfileList] = useState([]);
-  const [selectedProfile, setSelectedProfile] = useState(purpleProfile); 
+  const [selectedProfile, setSelectedProfile] = useState(purpleProfile);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const profileListRef = useRef(null);
 
-  
   useEffect(() => {
     async function fetchProfileImages() {
       try {
         const res = await fetch(
-          "https://rolling-api.vercel.app/profile-images/"
+          'https://rolling-api.vercel.app/profile-images/'
         );
         if (res.ok) {
           const data = await res.json();
@@ -79,7 +75,7 @@ export default function PostMessagePage() {
 
   // 외부 클릭 시 프로필 닫기
   useEffect(() => {
-    const handler = (e) => {
+    const handler = e => {
       if (
         profileListRef.current &&
         !profileListRef.current.contains(e.target)
@@ -88,28 +84,28 @@ export default function PostMessagePage() {
       }
     };
 
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
   }, []);
 
-  const toggleProfile = () => setIsProfileOpen((p) => !p);
+  const toggleProfile = () => setIsProfileOpen(p => !p);
 
   // -----------------------------
   // 관계 선택
   // -----------------------------
-  const [relationship, setRelationship] = useState("지인");
+  const [relationship, setRelationship] = useState('지인');
 
   // -----------------------------
   // 에디터 Content / Font
   // -----------------------------
-  const [content, setContent] = useState("");
-  const [font, setFont] = useState("Noto Sans");
+  const [content, setContent] = useState('');
+  const [font, setFont] = useState('Noto Sans');
 
   function isContentEmpty(html) {
     const cleaned = html
-      .replace(/<p>/g, "")
-      .replace(/<\/p>/g, "")
-      .replace(/&nbsp;/g, "")
+      .replace(/<p>/g, '')
+      .replace(/<\/p>/g, '')
+      .replace(/&nbsp;/g, '')
       .trim();
 
     return cleaned.length === 0;
@@ -119,26 +115,24 @@ export default function PostMessagePage() {
   // 버튼 Disabled 조건
   // -----------------------------
   const isSubmitDisabled =
-    sender.trim().length === 0 ||
-    senderError ||
-    isContentEmpty(content);
+    sender.trim().length === 0 || senderError || isContentEmpty(content);
 
   // -----------------------------
   // POST 요청
   // -----------------------------
   const handleSubmit = async () => {
     if (isContentEmpty(content)) {
-      alert("내용을 입력해주세요!");
+      alert('내용을 입력해주세요!');
       return;
     }
 
     const url = `https://rolling-api.vercel.app/20-3/recipients/${recipientId}/messages/`;
 
-    const isLocalImage = !selectedProfile.startsWith("http");
+    const isLocalImage = !selectedProfile.startsWith('http');
     const safeProfileURL = isLocalImage ? DEFAULT_PROFILE : selectedProfile;
 
     const payload = {
-      team: "20-3",
+      team: '20-3',
       recipientId: Number(recipientId),
       sender,
       profileImageURL: safeProfileURL,
@@ -149,24 +143,24 @@ export default function PostMessagePage() {
 
     try {
       const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
 
       const result = await res.json();
-      console.log("POST Result:", result);
+      console.log('POST Result:', result);
 
       if (res.ok) {
         localStorage.setItem('my_name', sender);
-        alert("메시지가 성공적으로 생성되었습니다!");
-        navigate(`/post/${recipientId}`);   // ← 이동!
+        alert('메시지가 성공적으로 생성되었습니다!');
+        navigate(`/post/${recipientId}`); // ← 이동!
       } else {
-        alert(result.detail || "요청 실패");
+        alert(result.detail || '요청 실패');
       }
     } catch (err) {
-      console.log("POST Error:", err);
-      alert("요청 중 문제가 발생했습니다.");
+      console.log('POST Error:', err);
+      alert('요청 중 문제가 발생했습니다.');
     }
   };
 
@@ -177,7 +171,6 @@ export default function PostMessagePage() {
       <div className={styles.page}>
         <div className={styles.main}>
           <div className={styles.inner}>
-
             {/* From */}
             <section className={styles.fieldGroup}>
               <h2 className={styles.label}>From.</h2>
@@ -211,7 +204,7 @@ export default function PostMessagePage() {
 
               {isProfileOpen && (
                 <div className={styles.profileList}>
-                  {profileList.map((url) => (
+                  {profileList.map(url => (
                     <button
                       key={url}
                       className={styles.profileItem}
@@ -232,10 +225,10 @@ export default function PostMessagePage() {
               <h2 className={styles.label}>상대와의 관계</h2>
               <Dropdown
                 options={[
-                  { label: "지인", value: "지인" },
-                  { label: "친구", value: "친구" },
-                  { label: "가족", value: "가족" },
-                  { label: "동료", value: "동료" },
+                  { label: '지인', value: '지인' },
+                  { label: '친구', value: '친구' },
+                  { label: '가족', value: '가족' },
+                  { label: '동료', value: '동료' },
                 ]}
                 value={relationship}
                 onChange={setRelationship}
@@ -258,12 +251,11 @@ export default function PostMessagePage() {
               <Button
                 title="생성하기"
                 variant="primary"
-                interactionState={isSubmitDisabled ? "disabled" : "enabled"}
+                interactionState={isSubmitDisabled ? 'disabled' : 'enabled'}
                 onClick={handleSubmit}
-                style={{ width: "100%" }}
+                style={{ width: '100%' }}
               />
             </div>
-
           </div>
         </div>
       </div>

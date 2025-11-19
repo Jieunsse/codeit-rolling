@@ -30,3 +30,11 @@
   inset: 0;
 }
 
+
+@media (width <= 767px) {
+  .container {
+    width: 220px;
+    height: 210px;
+    padding: 20px 16px;
+  }
+}
