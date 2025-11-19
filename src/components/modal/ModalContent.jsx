@@ -15,14 +15,12 @@ import styles from './ModalContent.module.css';
 
 function ModalContent({ message }) {
   return (
-    <>
-      <div className={styles.messageBox}>
-        <div className={styles.scrollArea}>
-          <div 
-            className={styles.message}
-            dangerouslySetInnerHTML={{ __html: message}}
-          />
-        </div>
+    <div className={styles.messageBox}>
+      <div className={styles.scrollArea}>
+        <div
+          className={styles.message}
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
       </div>
     </div>
   );
