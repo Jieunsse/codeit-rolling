@@ -65,14 +65,16 @@
 
 @media (width <= 767px) {
   .imgContainer {
-    padding: 0 24px;
+    padding: 0;
     gap: 20px
   }
 
   .banner {
-    width: clamp(320px, 90vw, 326px);
+    display: block;
+    width: calc(100% - 40px);
     height: auto;
     max-height: none;
+    margin: 0 20px;
   }
 
   .navContainer {
@@ -82,6 +84,11 @@
   .button {
     width: 100%;
     max-width: 280px;
+  }
+
+  picture {
+    display: block;
+    width: 100%;
   }
 }
 
