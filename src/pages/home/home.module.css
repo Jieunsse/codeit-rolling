@@ -70,9 +70,9 @@
   }
 
   .banner {
-    width: 100%;
+    width: clamp(320px, 90vw, 326px);
     height: auto;
-    max-height: 260px;
+    max-height: none;
   }
 
   .navContainer {
