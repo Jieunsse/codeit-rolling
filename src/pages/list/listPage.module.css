@@ -115,6 +115,7 @@
   .listPageButton {
     width: 320px;
     height: 56px;
+    margin-left: 40px;
     font-size: 16px;
   }
 
