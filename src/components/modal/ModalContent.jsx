@@ -13,7 +13,7 @@ import styles from './ModalContent.module.css';
  * <ModalContent message="정말 수고 많았어요! 내일 봬요 😊" />
  */
 
-function ModalContent({ message }) {
+function ModalContent({ message, font }) {
   return (
     <div className={styles.messageBox}>
       <div className={styles.scrollArea}>

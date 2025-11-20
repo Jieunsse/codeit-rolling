@@ -43,6 +43,7 @@ function Modal({
   badge,
   createAt,
   message,
+  font
 }) {
   if (!isOpen) {
     return null;

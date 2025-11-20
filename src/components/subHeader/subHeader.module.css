@@ -21,6 +21,8 @@
   }
   .rightArea {
     width: 100%;
+    gap:4px;
+    flex-shrink: 1;
   }
 }
 
