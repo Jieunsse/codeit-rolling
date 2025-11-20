@@ -66,6 +66,7 @@ export default function CardListWrapper({ cards = [] }) {
                 messageCount={card.messageCount}
                 reactions={card.reactions}
                 background={card.background}
+                recipientId={card.id}
               />
             </div>
           ))}
